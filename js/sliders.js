@@ -47,4 +47,94 @@ document.addEventListener('DOMContentLoaded', () => {
       updateTestimonial(currentIdx);
     });
   }
+
+  // =========================================================================
+  // TOUR CATEGORIES OWL CAROUSEL ARC SLIDER
+  // =========================================================================
+  const categoriesCarousel = document.getElementById('categoriesCarousel');
+  const categoriesDotsContainer = document.getElementById('categoriesDots');
+
+  if (categoriesCarousel) {
+    const cards = Array.from(categoriesCarousel.querySelectorAll('.owl-item-card'));
+    const totalCards = cards.length;
+    let activeIndex = 2; // Default center item (Airbirds)
+
+    // Render Dots Navigation
+    if (categoriesDotsContainer && totalCards > 0) {
+      categoriesDotsContainer.innerHTML = '';
+      cards.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `owl-dot-btn ${idx === activeIndex ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+        dot.addEventListener('click', () => setActiveSlide(idx));
+        categoriesDotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateDots(idx) {
+      if (!categoriesDotsContainer) return;
+      const dots = categoriesDotsContainer.querySelectorAll('.owl-dot-btn');
+      dots.forEach((dot, dIdx) => {
+        dot.classList.toggle('active', dIdx === idx);
+      });
+    }
+
+    function setActiveSlide(idx) {
+      activeIndex = idx;
+      
+      cards.forEach((card, cardIdx) => {
+        const diff = cardIdx - activeIndex;
+
+        if (diff === -2) {
+          card.setAttribute('data-arc', 'left-2');
+        } else if (diff === -1) {
+          card.setAttribute('data-arc', 'left-1');
+        } else if (diff === 0) {
+          card.setAttribute('data-arc', 'center');
+        } else if (diff === 1) {
+          card.setAttribute('data-arc', 'right-1');
+        } else if (diff === 2) {
+          card.setAttribute('data-arc', 'right-2');
+        } else if (diff < -2) {
+          card.setAttribute('data-arc', 'left-2');
+        } else {
+          card.setAttribute('data-arc', 'right-2');
+        }
+      });
+
+      updateDots(idx);
+    }
+
+    // Add click listeners on cards
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', () => {
+        setActiveSlide(idx);
+      });
+    });
+
+    // Touch / Swipe support
+    let startX = 0;
+    let isDragging = false;
+
+    categoriesCarousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    }, { passive: true });
+
+    categoriesCarousel.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+
+      if (diffX > 40 && activeIndex < totalCards - 1) {
+        setActiveSlide(activeIndex + 1);
+      } else if (diffX < -40 && activeIndex > 0) {
+        setActiveSlide(activeIndex - 1);
+      }
+    }, { passive: true });
+
+    // Initial positioning
+    setActiveSlide(activeIndex);
+  }
 });

@@ -4,39 +4,61 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Navigation Drawer Toggle
-  const mobileToggleBtn = document.getElementById('mobileMenuToggle');
-  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-  const drawerCloseBtn = document.getElementById('drawerClose');
-  const backdropOverlay = document.getElementById('backdropOverlay');
+  // Dynamic HTML Inclusion function for Header & Footer
+  async function loadIncludes() {
+    const includes = document.querySelectorAll('[data-include]');
+    for (const el of includes) {
+      const file = el.getAttribute('data-include');
+      if (file) {
+        try {
+          const resp = await fetch(file);
+          if (resp.ok) {
+            el.innerHTML = await resp.text();
+          }
+        } catch (e) {
+          console.warn('Could not load include file:', file, e);
+        }
+      }
+    }
+    initNavigation();
+  }
 
-  function openDrawer() {
-    if (mobileNavDrawer && backdropOverlay) {
-      mobileNavDrawer.classList.add('open');
-      backdropOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
+  function initNavigation() {
+    const mobileToggleBtn = document.getElementById('mobileMenuToggle');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const drawerCloseBtn = document.getElementById('drawerClose');
+    const backdropOverlay = document.getElementById('backdropOverlay');
+
+    function openDrawer() {
+      if (mobileNavDrawer && backdropOverlay) {
+        mobileNavDrawer.classList.add('open');
+        backdropOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeDrawer() {
+      if (mobileNavDrawer && backdropOverlay) {
+        mobileNavDrawer.classList.remove('open');
+        backdropOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (mobileToggleBtn) {
+      mobileToggleBtn.addEventListener('click', openDrawer);
+    }
+
+    if (drawerCloseBtn) {
+      drawerCloseBtn.addEventListener('click', closeDrawer);
+    }
+
+    if (backdropOverlay) {
+      backdropOverlay.addEventListener('click', closeDrawer);
     }
   }
 
-  function closeDrawer() {
-    if (mobileNavDrawer && backdropOverlay) {
-      mobileNavDrawer.classList.remove('open');
-      backdropOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (mobileToggleBtn) {
-    mobileToggleBtn.addEventListener('click', openDrawer);
-  }
-
-  if (drawerCloseBtn) {
-    drawerCloseBtn.addEventListener('click', closeDrawer);
-  }
-
-  if (backdropOverlay) {
-    backdropOverlay.addEventListener('click', closeDrawer);
-  }
+  loadIncludes();
 
   // Floating Search Bar Form Submission
   const heroSearchForm = document.getElementById('heroSearchForm');

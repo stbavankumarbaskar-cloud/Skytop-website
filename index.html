@@ -71,95 +71,98 @@
 </head>
 <body class="home-page">
 
-  <!-- Top Header Contact & Currency Bar -->
-  <aside class="top-bar" aria-label="Top contact and settings bar">
-    <div class="container top-bar-inner">
-      <div class="top-bar-left">
-        <div class="top-info-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span>350 5th Ave, New York, NY 10118</span>
+  <!-- Header Component Include -->
+  <div data-include="header.html">
+    <!-- Top Header Contact & Currency Bar -->
+    <aside class="top-bar" aria-label="Top contact and settings bar">
+      <div class="container top-bar-inner">
+        <div class="top-bar-left">
+          <div class="top-info-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>350 5th Ave, New York, NY 10118</span>
+          </div>
+          <div class="top-info-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:info@skytop.com">info@skytop.com</a>
+          </div>
+          <div class="top-info-item">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <a href="tel:+18001234567">+1 800 123 4567</a>
+          </div>
         </div>
-        <div class="top-info-item">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <a href="mailto:info@skytop.com">info@skytop.com</a>
-        </div>
-        <div class="top-info-item">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <a href="tel:+18001234567">+1 800 123 4567</a>
+        <div class="top-bar-right">
+          <div class="top-bar-selectors">
+            <select class="top-selector" aria-label="Select Currency">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+            </select>
+            <select class="top-selector" aria-label="Select Language">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
         </div>
       </div>
-      <div class="top-bar-right">
-        <div class="top-bar-selectors">
-          <select class="top-selector" aria-label="Select Currency">
-            <option value="USD">USD ($)</option>
-            <option value="EUR">EUR (€)</option>
-            <option value="GBP">GBP (£)</option>
-          </select>
-          <select class="top-selector" aria-label="Select Language">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </aside>
+    </aside>
 
-  <!-- Main Navbar Header -->
-  <header class="site-header">
-    <div class="container">
-      <nav class="navbar" aria-label="Main Site Navigation">
-        <a href="index.html" class="brand-logo" title="SkyTop Home">
+    <!-- Main Navbar Header -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="navbar" aria-label="Main Site Navigation">
+          <a href="index.html" class="brand-logo" title="SkyTop Home">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+            </div>
+            <span>Sky<span class="highlight">Top</span></span>
+          </a>
+
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About us</a></li>
+            <li><a href="#destinations" class="nav-link">Destination</a></li>
+            <li><a href="#services" class="nav-link">Our Services</a></li>
+            <li><a href="#tours" class="nav-link">Popular Tours</a></li>
+            <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li><a href="#contact" class="nav-link">Contact us</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="#contact" class="btn btn-primary">Book Now &rarr;</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="backdrop-overlay" id="backdropOverlay"></div>
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation Drawer">
+      <div class="drawer-header">
+        <a href="index.html" class="brand-logo">
           <div class="brand-logo-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
           </div>
           <span>Sky<span class="highlight">Top</span></span>
         </a>
-
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About us</a></li>
-          <li><a href="#destinations" class="nav-link">Destination</a></li>
-          <li><a href="#services" class="nav-link">Our Services</a></li>
-          <li><a href="#tours" class="nav-link">Popular Tours</a></li>
-          <li><a href="#blog" class="nav-link">Blog</a></li>
-          <li><a href="#contact" class="nav-link">Contact us</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <a href="#contact" class="btn btn-primary">Book Now &rarr;</a>
-          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer Menu -->
-  <div class="backdrop-overlay" id="backdropOverlay"></div>
-  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation Drawer">
-    <div class="drawer-header">
-      <a href="index.html" class="brand-logo">
-        <div class="brand-logo-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
-        </div>
-        <span>Sky<span class="highlight">Top</span></span>
-      </a>
-      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
-    </div>
-    <div class="mobile-nav-links">
-      <a href="index.html">Home</a>
-      <a href="#about">About us</a>
-      <a href="#destinations">Destination</a>
-      <a href="#services">Our Services</a>
-      <a href="#tours">Popular Tours</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact us</a>
-    </div>
-  </aside>
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="#about">About us</a>
+        <a href="#destinations">Destination</a>
+        <a href="#services">Our Services</a>
+        <a href="#tours">Popular Tours</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact us</a>
+      </div>
+    </aside>
+  </div>
 
   <!-- Main Content Area -->
   <main id="main-content">
@@ -167,13 +170,13 @@
     <!-- 1. Hero Section -->
     <section class="hero-section" aria-label="Hero Banner">
       <div class="container hero-content">
-        <span class="hero-subtitle">Unforgettable places with us</span>
+        <span class="hero-subtitle">Get unforgettable pleasure with us</span>
         <!-- H1 SEO Rule: Exactly ONE primary H1 on the home page -->
-        <h1 class="hero-title">Natural Wonder Of The World</h1>
+        <h1 class="hero-title">Natural Wonder<br>Of The World</h1>
         
         <div class="hero-btns">
           <a href="#destinations" class="btn btn-primary">Explore Tours &rarr;</a>
-          <a href="#services" class="btn btn-outline-glass">See Services &rarr;</a>
+          <a href="#services" class="btn btn-outline-glass">Our Services &rarr;</a>
         </div>
       </div>
 
@@ -214,52 +217,59 @@
 
     <!-- 2. Tour Categories Section -->
     <section class="categories-section" id="categories">
-      <div class="container">
-        <div class="text-center">
-          <span class="section-subtitle">Unforgettable Places For You</span>
-          <h2 class="section-title">Tour Categories</h2>
+      <div class="categories-container container">
+        <div class="text-center categories-header">
+          <span class="section-subtitle-script">Wonderful Place For You</span>
+          <h2 class="section-title-owl">Tour Categories</h2>
         </div>
 
-        <div class="categories-grid">
-          <article class="category-card">
-            <div class="category-img-wrapper">
-              <img src="assets/images/skytop-destination-greece.jpg" alt="Cruises tour category" loading="lazy">
+        <div class="owl-carousel-wrapper">
+          <div class="owl-carousel categories-owl-carousel" id="categoriesCarousel">
+            
+            <div class="owl-item-card" data-index="0">
+              <div class="category-img-box">
+                <img src="../assets/images/georgy-trofimov-xEJoSsDCnR8-unsplash.jpg" alt="Cruises tour category" loading="lazy">
+              </div>
+              <h3 class="category-title">Cruises</h3>
+              <a href="#tours" class="category-read-more">Read More</a>
             </div>
-            <h3 class="category-name">Cruises</h3>
-            <span class="category-count">14+ Tours</span>
-          </article>
 
-          <article class="category-card">
-            <div class="category-img-wrapper">
-              <img src="assets/images/skytop-destination-switzerland.jpg" alt="Hiking tour category" loading="lazy">
+            <div class="owl-item-card" data-index="1">
+              <div class="category-img-box">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Hiking tour category" loading="lazy">
+              </div>
+              <h3 class="category-title">Hiking</h3>
+              <a href="#tours" class="category-read-more">Read More</a>
             </div>
-            <h3 class="category-name">Hiking</h3>
-            <span class="category-count">20+ Tours</span>
-          </article>
 
-          <article class="category-card">
-            <div class="category-img-wrapper">
-              <img src="assets/images/skytop-hero-natural-wonder.jpg" alt="Wildlife safari tour category" loading="lazy">
+            <div class="owl-item-card" data-index="2">
+              <div class="category-img-box">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80" alt="Airbirds tour category" loading="lazy">
+              </div>
+              <h3 class="category-title">Airbirds</h3>
+              <a href="#tours" class="category-read-more">Read More</a>
             </div>
-            <h3 class="category-name">Wildlife</h3>
-            <span class="category-count">15+ Tours</span>
-          </article>
 
-          <article class="category-card">
-            <div class="category-img-wrapper">
-              <img src="assets/images/skytop-destination-thailand.jpg" alt="Floating lake tour category" loading="lazy">
+            <div class="owl-item-card" data-index="3">
+              <div class="category-img-box">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Wildlife tour category" loading="lazy">
+              </div>
+              <h3 class="category-title">Wildlife</h3>
+              <a href="#tours" class="category-read-more">Read More</a>
             </div>
-            <h3 class="category-name">Floating</h3>
-            <span class="category-count">18+ Tours</span>
-          </article>
 
-          <article class="category-card">
-            <div class="category-img-wrapper">
-              <img src="assets/images/skytop-destination-dubai.jpg" alt="Trekking adventure tour category" loading="lazy">
+            <div class="owl-item-card" data-index="4">
+              <div class="category-img-box">
+                <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=600&q=80" alt="Walking tour category" loading="lazy">
+              </div>
+              <h3 class="category-title">Walking</h3>
+              <a href="#tours" class="category-read-more">Read More</a>
             </div>
-            <h3 class="category-name">Trekking</h3>
-            <span class="category-count">12+ Tours</span>
-          </article>
+
+          </div>
+
+          <!-- Owl Carousel Dots Pagination -->
+          <div class="owl-dots-container" id="categoriesDots"></div>
         </div>
       </div>
     </section>
@@ -632,90 +642,93 @@
 
   </main>
 
-  <!-- Site Footer -->
-  <footer class="site-footer" id="contact">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-logo">
-            <div class="brand-logo-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+  <!-- Footer Component Include -->
+  <div data-include="footer.html">
+    <!-- Site Footer -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html" class="brand-logo">
+              <div class="brand-logo-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+              </div>
+              <span>Sky<span class="highlight">Top</span></span>
+            </a>
+            <p>SkyTop is a premier travel agency dedicated to creating unforgettable journey experiences around the world with safety, comfort, and luxury.</p>
+            <div class="social-links">
+              <a href="https://facebook.com" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="https://twitter.com" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+              <a href="https://instagram.com" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
             </div>
-            <span>Sky<span class="highlight">Top</span></span>
-          </a>
-          <p>SkyTop is a premier travel agency dedicated to creating unforgettable journey experiences around the world with safety, comfort, and luxury.</p>
-          <div class="social-links">
-            <a href="https://facebook.com" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-            <a href="https://twitter.com" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-            <a href="https://instagram.com" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#destinations">Tour Destination</a></li>
+              <li><a href="#tours">Tour Package</a></li>
+              <li><a href="#services">Our Services</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Get In Touch</h3>
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>350 5th Ave, New York, NY 10118, USA</span>
+              </div>
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>+1 800 123 4567</span>
+              </div>
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@skytop.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Instagram Post</h3>
+            <div class="instagram-grid">
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-greece.jpg" alt="Instagram post Greece" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-thailand.jpg" alt="Instagram post Thailand" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-dubai.jpg" alt="Instagram post Dubai" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-switzerland.jpg" alt="Instagram post Switzerland" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-hero-natural-wonder.jpg" alt="Instagram post Tropical beach" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-greece.jpg" alt="Instagram post Island view" loading="lazy">
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="footer-column">
-          <h3 class="footer-heading">Quick Links</h3>
-          <ul class="footer-links-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#destinations">Tour Destination</a></li>
-            <li><a href="#tours">Tour Package</a></li>
-            <li><a href="#services">Our Services</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3 class="footer-heading">Get In Touch</h3>
-          <div class="contact-info-list">
-            <div class="contact-info-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              <span>350 5th Ave, New York, NY 10118, USA</span>
-            </div>
-            <div class="contact-info-item">
-              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              <span>+1 800 123 4567</span>
-            </div>
-            <div class="contact-info-item">
-              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              <span>info@skytop.com</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h3 class="footer-heading">Instagram Post</h3>
-          <div class="instagram-grid">
-            <div class="instagram-thumb">
-              <img src="assets/images/skytop-destination-greece.jpg" alt="Instagram post Greece" loading="lazy">
-            </div>
-            <div class="instagram-thumb">
-              <img src="assets/images/skytop-destination-thailand.jpg" alt="Instagram post Thailand" loading="lazy">
-            </div>
-            <div class="instagram-thumb">
-              <img src="assets/images/skytop-destination-dubai.jpg" alt="Instagram post Dubai" loading="lazy">
-            </div>
-            <div class="instagram-thumb">
-              <img src="assets/images/skytop-destination-switzerland.jpg" alt="Instagram post Switzerland" loading="lazy">
-            </div>
-            <div class="instagram-thumb">
-              <img src="assets/images/skytop-hero-natural-wonder.jpg" alt="Instagram post Tropical beach" loading="lazy">
-            </div>
-            <div class="instagram-thumb">
-              <img src="assets/images/skytop-destination-greece.jpg" alt="Instagram post Island view" loading="lazy">
-            </div>
+        <div class="footer-bottom">
+          <p>Copyright &copy; 2026 SkyTop. All Rights Reserved.</p>
+          <div class="payment-methods">
+            <span class="payment-badge">VISA</span>
+            <span class="payment-badge">MASTERCARD</span>
+            <span class="payment-badge">PAYPAL</span>
+            <span class="payment-badge">AMEX</span>
           </div>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>Copyright &copy; 2026 SkyTop. All Rights Reserved.</p>
-        <div class="payment-methods">
-          <span class="payment-badge">VISA</span>
-          <span class="payment-badge">MASTERCARD</span>
-          <span class="payment-badge">PAYPAL</span>
-          <span class="payment-badge">AMEX</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
