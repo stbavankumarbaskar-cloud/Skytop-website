@@ -462,9 +462,6 @@
   background: rgba(15, 39, 68, 0.95);
   transform: translateY(-50%) scale(1.05);
 }
-  font-weight: 700;
-  margin-bottom: 6px;
-}
 
 /* --------------------------------------------------------------------------
    4. PLAN YOUR TRIP WITH US
@@ -1528,10 +1525,6 @@
   color: #ffffff;
   border-color: #20b2aa;
   box-shadow: 0 6px 18px rgba(32, 178, 170, 0.3);
-}
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
 }
 
 /* --------------------------------------------------------------------------
