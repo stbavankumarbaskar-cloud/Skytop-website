@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Primary Metadata -->
+  <title>Explore South India's Heritage - SkyTop Travels</title>
+  <meta name="description"
+    content="Discover South India's rich heritage, ancient temples, serene hill stations, and vibrant coastal beauty with SkyTop Travels. Explore Madurai, Kodaikanal, Rameswaram, and Kanyakumari.">
+  <meta name="keywords"
+    content="skytop destinations, south india tours, madurai travel, kodaikanal hill station, rameswaram tour, kanyakumari packages">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.skytop.com/destinations.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.skytop.com/destinations.html">
+  <meta property="og:title" content="Explore South India's Heritage - SkyTop Travels">
+  <meta property="og:description"
+    content="Immerse yourself in ancient temples, serene hill stations, and vibrant coastal beauty. Your journey begins here.">
+  <meta property="og:image" content="assets/images/coastal-road-hero.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/globals.css">
+  <link rel="stylesheet" href="styles/destinations.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "SkyTop Travels - Destinations",
+    "url": "https://www.skytop.com/destinations.html"
+  }
+  </script>
+</head>
+
+<body class="destinations-page">
+
+  <!-- Shared Header Component Include -->
+  <div data-include="header.html"></div>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+
+    <!-- 1. Hero Banner Section (Explore South India's Heritage) -->
+    <section class="destinations-hero" aria-label="Explore South India's Heritage Banner">
+      <!-- Faded Background Collage Layer -->
+      <div class="hero-bg-collage">
+        <div class="collage-card card-1"><img
+            src="https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=500&q=80"
+            alt="Madurai background"></div>
+        <div class="collage-card card-2"><img
+            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500&q=80"
+            alt="Kodaikanal background"></div>
+        <div class="collage-card card-3"><img src="assets/images/rameshwaram-temple.png" alt="Rameswaram background">
+        </div>
+        <div class="collage-card card-4"><img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80"
+            alt="Kanyakumari background"></div>
+      </div>
+      <div class="hero-mist-overlay"></div>
+
+      <div class="container hero-content-center">
+        <span class="destinations-hero-subtitle">Discover the wonders of the South</span>
+        <h1 class="destinations-hero-title">Explore South India's<br>Heritage</h1>
+        <p class="destinations-hero-desc">
+          Immerse yourself in ancient temples, serene hill stations, and vibrant coastal beauty. Your journey begins here.
+        </p>
+
+        <!-- Floating Glass Search Card -->
+        <div class="dest-search-container">
+          <form class="dest-search-card" id="destSearchForm">
+            <div class="dest-search-field">
+              <div class="field-icon-label">
+                <i class="fa-solid fa-location-dot search-fa-icon"></i>
+                <span class="search-field-tag">DESTINATION</span>
+              </div>
+              <input type="text" id="searchWhereTo" class="dest-search-input" placeholder="Where to?"
+                aria-label="Destination search">
+            </div>
+
+            <div class="dest-search-divider"></div>
+
+            <div class="dest-search-field">
+              <div class="field-icon-label">
+                <i class="fa-solid fa-shapes search-fa-icon"></i>
+                <span class="search-field-tag">TYPE</span>
+              </div>
+              <div class="select-wrapper">
+                <select id="searchTypeSelect" class="dest-search-select" aria-label="Select destination type">
+                  <option value="All Types">All Types</option>
+                  <option value="Heritage">Heritage</option>
+                  <option value="Temples">Temples</option>
+                  <option value="Hill Stations">Hill Stations</option>
+                  <option value="Beaches">Beaches</option>
+                  <option value="Wildlife">Wildlife</option>
+                  <option value="Cultural">Cultural</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-chevron"></i>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-dest-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Tour Categories Section -->
+    <section class="tour-categories-section">
+      <div class="container">
+        <div class="text-center categories-header">
+          <span class="categories-subtitle">Curated Experiences</span>
+          <h2 class="categories-title">Tour Categories</h2>
+        </div>
+
+        <!-- Filter Pills Navigation Row -->
+        <div class="dest-filter-tabs">
+          <button class="dest-tab-btn active" data-filter="all">All Destinations</button>
+          <button class="dest-tab-btn" data-filter="heritage">Temples & Heritage</button>
+          <button class="dest-tab-btn" data-filter="hillstation">Hill Stations</button>
+          <button class="dest-tab-btn" data-filter="coastal">Coastal Vibes</button>
+        </div>
+
+        <!-- Asymmetrical 2x2 Showcase Cards Grid -->
+        <div class="destinations-showcase-grid">
+
+          <!-- Row 1: Wide Left (Madurai), Narrow Right (Kodaikanal) -->
+          <div class="dest-row-1">
+            <!-- Card 1: Madurai (Wide Left) -->
+            <article class="dest-card card-wide" data-category="heritage">
+              <img src="https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=900&q=80"
+                alt="Madurai Meenakshi Temple sunset view" loading="lazy" class="dest-card-bg">
+              <div class="dest-card-overlay">
+                <span class="dest-badge badge-heritage">HERITAGE</span>
+                <h3 class="dest-name">Madurai</h3>
+                <p class="dest-desc">
+                  Experience the soul of Tamil Nadu in the ancient city of Madurai, home to the magnificent Meenakshi
+                  Temple.
+                </p>
+                <a href="book.html" class="dest-circle-arrow-btn" aria-label="Book Madurai Tour">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2: Kodaikanal (Narrow Right) -->
+            <article class="dest-card card-narrow" data-category="hillstation">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=80"
+                alt="Kodaikanal misty lake view" loading="lazy" class="dest-card-bg">
+              <div class="dest-card-overlay">
+                <span class="dest-badge badge-hill">HILL STATION</span>
+                <h3 class="dest-name">Kodaikanal</h3>
+                <p class="dest-desc">The Princess of Hill Stations.</p>
+                <a href="book.html" class="dest-text-link">View Packages &gt;</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Row 2: Narrow Left (Rameswaram), Wide Right (Kanyakumari) -->
+          <div class="dest-row-2">
+            <!-- Card 3: Rameswaram (Narrow Left) -->
+            <article class="dest-card card-narrow" data-category="heritage">
+              <img src="assets/images/rameshwaram-temple.png" alt="Rameswaram Ramanathaswamy Temple corridor"
+                loading="lazy" class="dest-card-bg">
+              <div class="dest-card-overlay">
+                <span class="dest-badge badge-pilgrimage">PILGRIMAGE</span>
+                <h3 class="dest-name">Rameswaram</h3>
+                <p class="dest-desc">Sacred island city of calm.</p>
+                <a href="book.html" class="dest-text-link">View Packages &gt;</a>
+              </div>
+            </article>
+
+            <!-- Card 4: Kanyakumari (Wide Right) -->
+            <article class="dest-card card-wide" data-category="coastal">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+                alt="Kanyakumari Thiruvalluvar Statue sunset" loading="lazy" class="dest-card-bg">
+              <div class="dest-card-overlay">
+                <span class="dest-badge badge-coastal">COASTAL</span>
+                <h3 class="dest-name">Kanyakumari</h3>
+                <p class="dest-desc">
+                  Witness breathtaking sunrises and sunsets at the confluence of three mighty oceans.
+                </p>
+                <a href="book.html" class="dest-circle-arrow-btn" aria-label="Book Kanyakumari Tour">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer Component Include -->
+  <div data-include="footer.html"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Tab Filtering Logic for Destinations Showcase
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabBtns = document.querySelectorAll('.dest-tab-btn');
+      const cards = document.querySelectorAll('.dest-card');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'block';
+              card.style.opacity = '1';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

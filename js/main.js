@@ -72,6 +72,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Destinations Page Floating Search Form Submission & Real-time Filter
+  const destSearchForm = document.getElementById('destSearchForm');
+  if (destSearchForm) {
+    destSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const whereTo = document.getElementById('searchWhereTo')?.value.toLowerCase().trim() || '';
+      const selectedType = document.getElementById('searchTypeSelect')?.value || 'All Types';
+
+      const cards = document.querySelectorAll('.dest-card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const category = card.getAttribute('data-category') || '';
+        
+        const matchWhere = !whereTo || text.includes(whereTo);
+        const matchType = selectedType === 'All Types' || category.toLowerCase().includes(selectedType.toLowerCase());
+
+        if (matchWhere && matchType) {
+          card.style.display = 'block';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+
   // Newsletter Form Submission
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
