@@ -1,61 +1,79 @@
 /* ==========================================================================
-   SKYTOP TRAVEL - BOOK PAGE SCOPED STYLESHEET (MATCHING EXACT REVISED DESIGN)
-   Scoped under parent container: .book-page
+   SKYTOP TRAVEL - BOOK PAGE SCOPED STYLESHEET
+   Matching Exact Design: Winding Coastal Road Banner + Left Smoke Mist + Clean Floating Card
    ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 .book-page {
   background-color: #F8FAFC;
-  color: var(--text-main);
-  font-family: var(--font-body);
+  color: #111827;
+  font-family: 'Plus Jakarta Sans', var(--font-body);
 }
 
 /* --------------------------------------------------------------------------
-   1. HERO BANNER (BOOK YOUR PREMIUM RIDE)
+   1. HERO BANNER (COASTAL ROAD + LEFT HEAVY SMOKE MIST OVERLAY + CENTERED CHARCOAL TYPOGRAPHY)
    -------------------------------------------------------------------------- */
 .book-page .book-hero {
   position: relative;
-  min-height: 480px;
-  background: linear-gradient(180deg, rgba(15, 39, 68, 0.4) 0%, rgba(15, 39, 68, 0.65) 100%),
-    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  min-height: 520px;
+  /* Light subtle smoky fog wash so coastal scenery pops through clearly */
+  background: 
+    radial-gradient(ellipse at 50% 45%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.25) 30%, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0) 85%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 35%),
+    url('../assets/images/coastal-road-hero.png') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 90px 24px 140px;
-  color: var(--white);
+  padding: 110px 24px 85px;
+  color: #0f172a;
 }
 
 .book-page .book-hero-subtitle {
-  font-family: var(--font-script);
-  font-size: 32px;
-  color: #5eead4;
-  margin-bottom: 8px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 27px;
+  color: #0284c7;
+  margin-bottom: 14px;
   display: block;
+  text-align: center;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
 }
 
 .book-page .book-hero-title {
-  font-size: 52px;
+  font-size: 60px;
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-  margin-bottom: 16px;
-  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 auto 18px auto;
+  color: #0f172a;
+  max-width: 820px;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.95), 0 0 2px rgba(255, 255, 255, 1);
 }
 
 .book-page .book-hero-desc {
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 620px;
-  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.65;
+  text-align: center;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
 }
 
 /* --------------------------------------------------------------------------
-   2. BOOKING WIZARD CARD (OVERLAPPING HERO)
+   2. BOOKING WIZARD CARD (CLEAN WHITE CARD BELOW BANNER)
    -------------------------------------------------------------------------- */
 .book-page .wizard-container {
   max-width: 1040px;
-  margin: -80px auto 90px;
+  margin: 30px auto 90px;
   padding: 0 24px;
   position: relative;
   z-index: 20;
@@ -64,9 +82,9 @@
 .book-page .wizard-card {
   background: var(--white);
   border-radius: 24px;
-  padding: 40px 48px;
-  box-shadow: 0 20px 50px rgba(15, 39, 68, 0.1);
-  border: 1px solid var(--border-light);
+  padding: 44px 48px;
+  box-shadow: 0 20px 50px rgba(15, 39, 68, 0.07);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 /* Stepper Bar */
@@ -74,7 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
   position: relative;
   max-width: 700px;
   margin-left: auto;
@@ -85,7 +103,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
   z-index: 2;
   position: relative;
@@ -95,26 +113,28 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #f1f5f9;
+  background: #ffffff;
   color: #64748b;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   transition: var(--transition-fast);
-  border: 2px solid transparent;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .book-page .step-item.active .step-icon-circle {
-  background: var(--primary-teal);
-  color: var(--white);
-  box-shadow: 0 6px 20px rgba(17, 165, 200, 0.35);
+  background: #ffffff;
+  color: #111827;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .book-page .step-item.completed .step-icon-circle {
-  background: #0d9488;
-  color: var(--white);
+  background: #f1f5f9;
+  color: #0d9488;
 }
 
 .book-page .step-label {
@@ -126,7 +146,7 @@
 }
 
 .book-page .step-item.active .step-label {
-  color: var(--primary-dark);
+  color: #111827;
 }
 
 .book-page .stepper-line {
@@ -141,7 +161,7 @@
 
 .book-page .stepper-line-fill {
   height: 100%;
-  background: var(--primary-teal);
+  background: #11a5c8;
   width: 0%;
   transition: width 0.35s ease;
 }
@@ -171,7 +191,7 @@
 .book-page .field-label {
   font-size: 13px;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: #111827;
 }
 
 .book-page .input-with-icon {
@@ -185,7 +205,7 @@
   left: 16px;
   width: 18px;
   height: 18px;
-  fill: var(--primary-teal);
+  fill: #11a5c8;
   pointer-events: none;
 }
 
@@ -197,13 +217,13 @@
   border-radius: 12px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--primary-dark);
+  color: #111827;
   transition: var(--transition-fast);
 }
 
 .book-page .form-input:focus {
   background: var(--white);
-  border-color: var(--primary-teal);
+  border-color: #11a5c8;
   box-shadow: 0 0 0 3px rgba(17, 165, 200, 0.15);
 }
 
@@ -226,18 +246,18 @@
   gap: 8px;
   cursor: pointer;
   transition: var(--transition-smooth);
-  box-shadow: var(--shadow-teal);
+  box-shadow: 0 8px 20px rgba(17, 165, 200, 0.3);
 }
 
 .book-page .btn-continue:hover {
   background-color: #0d8ca8;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(17, 165, 200, 0.4);
+  box-shadow: 0 12px 28px rgba(17, 165, 200, 0.4);
 }
 
 .book-page .btn-back {
   background: transparent;
-  color: var(--text-muted);
+  color: #64748b;
   font-weight: 700;
   font-size: 14px;
   padding: 12px 20px;
@@ -246,7 +266,7 @@
 }
 
 .book-page .btn-back:hover {
-  color: var(--primary-dark);
+  color: #111827;
   background: #f1f5f9;
 }
 
@@ -271,7 +291,7 @@
 .book-page .v-card:hover,
 .book-page .v-card.selected {
   background: var(--white);
-  border-color: var(--primary-teal);
+  border-color: #11a5c8;
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
 }
@@ -284,13 +304,13 @@
 .book-page .v-title {
   font-size: 16px;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: #111827;
   margin-bottom: 4px;
 }
 
 .book-page .v-capacity {
   font-size: 12px;
-  color: var(--text-muted);
+  color: #64748b;
   font-weight: 600;
 }
 
@@ -298,7 +318,7 @@
   margin-top: 10px;
   font-size: 15px;
   font-weight: 800;
-  color: var(--primary-teal);
+  color: #11a5c8;
 }
 
 /* --------------------------------------------------------------------------
@@ -322,7 +342,7 @@
   height: 460px;
   border-radius: 220px 220px 24px 24px;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(15, 39, 68, 0.1);
+  box-shadow: 0 20px 45px rgba(15, 39, 68, 0.08);
   border: 6px solid var(--white);
   margin: 0 auto;
 }
@@ -353,14 +373,14 @@
 .book-page .custom-heading {
   font-size: 42px;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: #111827;
   margin-bottom: 18px;
   line-height: 1.2;
 }
 
 .book-page .custom-desc {
   font-size: 16px;
-  color: var(--text-muted);
+  color: #4b5563;
   line-height: 1.7;
   margin-bottom: 28px;
 }
@@ -378,7 +398,7 @@
   gap: 12px;
   font-size: 15px;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: #111827;
 }
 
 .book-page .check-icon {
@@ -437,7 +457,7 @@
   border-radius: 16px;
   padding: 24px;
   max-width: 320px;
-  border-left: 4px solid var(--primary-teal);
+  border-left: 4px solid #11a5c8;
   box-shadow: var(--shadow-sm);
   margin-bottom: 24px;
 }
@@ -445,13 +465,13 @@
 .book-page .hub-title {
   font-size: 16px;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: #111827;
   margin-bottom: 6px;
 }
 
 .book-page .hub-text {
   font-size: 13px;
-  color: var(--text-muted);
+  color: #4b5563;
   line-height: 1.6;
 }
 
@@ -470,7 +490,7 @@
   align-items: center;
   gap: 12px;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: #111827;
   font-size: 14px;
 }
 
@@ -478,7 +498,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--primary-teal);
+  background: #11a5c8;
 }
 
 /* --------------------------------------------------------------------------
