@@ -22,6 +22,9 @@
     content="Experience seamless travel with our high-end fleet and professional chauffeurs.">
   <meta property="og:image" content="assets/images/skytop-hero-natural-wonder.jpg">
 
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/globals.css">
   <link rel="stylesheet" href="styles/book.css">
@@ -170,17 +173,17 @@
           </div>
 
           <div class="step-item active" data-step="1" id="stepIndicator1">
-            <div class="step-icon-circle">📍</div>
+            <div class="step-icon-circle"><i class="fa-solid fa-location-dot"></i></div>
             <span class="step-label">TRIP DETAILS</span>
           </div>
 
           <div class="step-item" data-step="2" id="stepIndicator2">
-            <div class="step-icon-circle">🚘</div>
+            <div class="step-icon-circle"><i class="fa-solid fa-car"></i></div>
             <span class="step-label">VEHICLE</span>
           </div>
 
           <div class="step-item" data-step="3" id="stepIndicator3">
-            <div class="step-icon-circle">👤</div>
+            <div class="step-icon-circle"><i class="fa-solid fa-user"></i></div>
             <span class="step-label">DETAILS</span>
           </div>
         </div>
@@ -193,10 +196,7 @@
               <div class="field-box">
                 <label class="field-label" for="pickupLoc">Pickup Location</label>
                 <div class="input-with-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                  </svg>
+                  <i class="fa-solid fa-crosshairs field-fa-icon"></i>
                   <input type="text" id="pickupLoc" class="form-input" placeholder="Enter pickup address or landmark"
                     required>
                 </div>
@@ -205,10 +205,7 @@
               <div class="field-box">
                 <label class="field-label" for="dropoffLoc">Drop-off Location</label>
                 <div class="input-with-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                  </svg>
+                  <i class="fa-solid fa-location-dot field-fa-icon"></i>
                   <input type="text" id="dropoffLoc" class="form-input" placeholder="Enter destination" required>
                 </div>
               </div>
@@ -216,10 +213,7 @@
               <div class="field-box">
                 <label class="field-label" for="pickupDate">Pickup Date</label>
                 <div class="input-with-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z" />
-                  </svg>
+                  <i class="fa-solid fa-calendar-days field-fa-icon"></i>
                   <input type="date" id="pickupDate" class="form-input" required>
                 </div>
               </div>
@@ -227,10 +221,7 @@
               <div class="field-box">
                 <label class="field-label" for="pickupTime">Pickup Time</label>
                 <div class="input-with-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
-                  </svg>
+                  <i class="fa-regular fa-clock field-fa-icon"></i>
                   <input type="time" id="pickupTime" class="form-input" required>
                 </div>
               </div>
@@ -337,9 +328,11 @@
       <div class="container">
         <div class="custom-trip-grid">
 
-          <div class="custom-media-arch">
-            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
-              alt="Person planning custom trip itinerary on laptop">
+          <div class="custom-media-blob-container">
+            <div class="custom-media-blob">
+              <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+                alt="Person planning custom trip itinerary on laptop">
+            </div>
           </div>
 
           <div class="custom-info-content">
@@ -352,21 +345,22 @@
 
             <div class="check-feature-list">
               <div class="check-feature-item">
-                <div class="check-icon">&#10003;</div>
+                <i class="fa-regular fa-circle-check check-fa-icon"></i>
                 <span>Dedicated Travel Consultant</span>
               </div>
               <div class="check-feature-item">
-                <div class="check-icon">&#10003;</div>
+                <i class="fa-regular fa-circle-check check-fa-icon"></i>
                 <span>Flexible Scheduling</span>
               </div>
               <div class="check-feature-item">
-                <div class="check-icon">&#10003;</div>
+                <i class="fa-regular fa-circle-check check-fa-icon"></i>
                 <span>Premium Fleet Selection</span>
               </div>
             </div>
 
             <a href="index.html#contact" class="btn-request-quote">
-              Request a Quote &#128196;
+              <span>Request a Quote</span>
+              <i class="fa-regular fa-file-lines"></i>
             </a>
           </div>
 
