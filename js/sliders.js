@@ -48,6 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Helper for signed circular distance in infinite loop
+  function getCircularDiff(idx, activeIdx, total) {
+    let diff = (idx - activeIdx) % total;
+    if (diff < -Math.floor(total / 2)) {
+      diff += total;
+    } else if (diff > Math.floor(total / 2)) {
+      diff -= total;
+    }
+    return diff;
+  }
+
   // =========================================================================
   // TOUR CATEGORIES OWL CAROUSEL ARC SLIDER
   // =========================================================================
@@ -80,10 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setActiveSlide(idx) {
-      activeIndex = idx;
+      activeIndex = (idx + totalCards) % totalCards;
       
       cards.forEach((card, cardIdx) => {
-        const diff = cardIdx - activeIndex;
+        const diff = getCircularDiff(cardIdx, activeIndex, totalCards);
 
         if (diff === -2) {
           card.setAttribute('data-arc', 'left-2');
@@ -102,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      updateDots(idx);
+      updateDots(activeIndex);
     }
 
     // Add click listeners on cards
@@ -112,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Touch / Swipe support
+    // Touch / Swipe support with infinite loop
     let startX = 0;
     let isDragging = false;
 
@@ -127,14 +138,114 @@ document.addEventListener('DOMContentLoaded', () => {
       const endX = e.changedTouches[0].clientX;
       const diffX = startX - endX;
 
-      if (diffX > 40 && activeIndex < totalCards - 1) {
+      if (diffX > 40) {
         setActiveSlide(activeIndex + 1);
-      } else if (diffX < -40 && activeIndex > 0) {
+      } else if (diffX < -40) {
         setActiveSlide(activeIndex - 1);
       }
     }, { passive: true });
 
     // Initial positioning
     setActiveSlide(activeIndex);
+  }
+
+  // =========================================================================
+  // TOP DESTINATION 3D COVERFLOW OWL CAROUSEL (INFINITE LOOP)
+  // =========================================================================
+  const destinationsCarousel = document.getElementById('destinationsCarousel');
+  const destinationTabsContainer = document.getElementById('destinationTabs');
+
+  if (destinationsCarousel) {
+    const coverCards = Array.from(destinationsCarousel.querySelectorAll('.coverflow-card'));
+    const totalCoverCards = coverCards.length;
+    let coverActiveIdx = 0; // Default active (Maldives)
+
+    function updateCoverflow(idx) {
+      coverActiveIdx = (idx + totalCoverCards) % totalCoverCards;
+
+      coverCards.forEach((card, cIdx) => {
+        const diff = getCircularDiff(cIdx, coverActiveIdx, totalCoverCards);
+
+        if (diff === -2) {
+          card.setAttribute('data-pos', 'left-2');
+        } else if (diff === -1) {
+          card.setAttribute('data-pos', 'left-1');
+        } else if (diff === 0) {
+          card.setAttribute('data-pos', 'center');
+        } else if (diff === 1) {
+          card.setAttribute('data-pos', 'right-1');
+        } else if (diff === 2) {
+          card.setAttribute('data-pos', 'right-2');
+        } else if (diff < -2) {
+          card.setAttribute('data-pos', 'left-2');
+        } else {
+          card.setAttribute('data-pos', 'right-2');
+        }
+      });
+
+      // Update Tab Active State
+      if (destinationTabsContainer) {
+        const tabs = destinationTabsContainer.querySelectorAll('.tab-btn');
+        tabs.forEach((tab, tIdx) => {
+          tab.classList.toggle('active', tIdx === coverActiveIdx);
+        });
+      }
+    }
+
+    // Tab button clicks
+    if (destinationTabsContainer) {
+      const tabs = destinationTabsContainer.querySelectorAll('.tab-btn');
+      tabs.forEach((tab, tIdx) => {
+        tab.addEventListener('click', () => {
+          updateCoverflow(tIdx);
+        });
+      });
+    }
+
+    // Card click navigation
+    coverCards.forEach((card, cIdx) => {
+      card.addEventListener('click', () => {
+        updateCoverflow(cIdx);
+      });
+    });
+
+    // Touch & Drag Support with Infinite Loop
+    let dragStartX = 0;
+    let isCoverDragging = false;
+
+    destinationsCarousel.addEventListener('mousedown', (e) => {
+      dragStartX = e.clientX;
+      isCoverDragging = true;
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (!isCoverDragging) return;
+      isCoverDragging = false;
+      const diffX = dragStartX - e.clientX;
+      if (diffX > 40) {
+        updateCoverflow(coverActiveIdx + 1);
+      } else if (diffX < -40) {
+        updateCoverflow(coverActiveIdx - 1);
+      }
+    });
+
+    destinationsCarousel.addEventListener('touchstart', (e) => {
+      dragStartX = e.touches[0].clientX;
+      isCoverDragging = true;
+    }, { passive: true });
+
+    destinationsCarousel.addEventListener('touchend', (e) => {
+      if (!isCoverDragging) return;
+      isCoverDragging = false;
+      const diffX = dragStartX - e.changedTouches[0].clientX;
+      if (diffX > 40) {
+        updateCoverflow(coverActiveIdx + 1);
+      } else if (diffX < -40) {
+        updateCoverflow(coverActiveIdx - 1);
+      }
+    }, { passive: true });
+
+    // Initial Coverflow Positioning
+    updateCoverflow(coverActiveIdx);
   }
 });

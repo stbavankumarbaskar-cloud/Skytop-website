@@ -84,25 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-  // Destination Tab Filtering
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const destinationCards = document.querySelectorAll('.destination-card');
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-
-      destinationCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
 });
