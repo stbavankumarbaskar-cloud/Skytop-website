@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. HERO SECTION
+   1. HERO SECTION & FLOATING SEARCH BAR
    -------------------------------------------------------------------------- */
 .home-page .hero-section {
   position: relative;
@@ -106,6 +106,37 @@
   border-radius: var(--radius-pill);
 }
 
+/* --- Section 1 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page h1.hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page h1.hero-title {
+    font-size: 36px;
+  }
+
+  .home-page .search-bar-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .home-page .search-field {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page h1.hero-title {
+    font-size: 30px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    2. TOUR CATEGORIES SECTION
    -------------------------------------------------------------------------- */
@@ -152,14 +183,14 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 22px;
-  min-height: 380px;
+  gap: 24px;
+  min-height: 430px;
   position: relative;
 }
 
 .home-page .owl-item-card {
-  flex: 0 0 215px;
-  max-width: 215px;
+  flex: 0 0 245px;
+  max-width: 245px;
   text-align: center;
   cursor: pointer;
   transform-origin: center bottom;
@@ -169,10 +200,10 @@
 
 .home-page .category-img-box {
   width: 100%;
-  height: 235px;
-  border-radius: 26px;
+  height: 270px;
+  border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(23, 54, 43, 0.12);
+  box-shadow: 0 14px 32px rgba(23, 54, 43, 0.14);
   margin-bottom: 14px;
   background: #ffffff;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -191,16 +222,16 @@
 }
 
 .home-page .category-title {
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   color: #17362b;
   margin-bottom: 2px;
   line-height: 1.3;
 }
 
 .home-page .category-read-more {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 13.5px;
+  font-weight: 600;
   color: #728780;
   text-decoration: none;
   display: inline-block;
@@ -211,29 +242,29 @@
   color: #26B8BA;
 }
 
-/* 3D Arc Curve Positions */
+/* 3D Arc Curve Positions - Increased Sizing */
 .home-page .owl-item-card[data-arc="left-2"] {
-  transform: translateY(30px) rotate(-11deg) scale(0.96);
+  transform: translateY(32px) rotate(-11deg) scale(0.98);
   z-index: 1;
 }
 
 .home-page .owl-item-card[data-arc="left-1"] {
-  transform: translateY(10px) rotate(-5.5deg) scale(0.98);
+  transform: translateY(12px) rotate(-5.5deg) scale(1.02);
   z-index: 2;
 }
 
 .home-page .owl-item-card[data-arc="center"] {
-  transform: translateY(0px) rotate(0deg) scale(1.04);
+  transform: translateY(0px) rotate(0deg) scale(1.08);
   z-index: 5;
 }
 
 .home-page .owl-item-card[data-arc="right-1"] {
-  transform: translateY(10px) rotate(5.5deg) scale(0.98);
+  transform: translateY(12px) rotate(5.5deg) scale(1.02);
   z-index: 2;
 }
 
 .home-page .owl-item-card[data-arc="right-2"] {
-  transform: translateY(30px) rotate(11deg) scale(0.96);
+  transform: translateY(32px) rotate(11deg) scale(0.98);
   z-index: 1;
 }
 
@@ -264,6 +295,17 @@
   width: 13px;
   height: 13px;
   transform: scale(1.1);
+}
+
+/* --- Section 2 Responsive Media Queries --- */
+@media (max-width: 768px) {
+  .home-page .owl-item-card {
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+  .home-page .category-img-box {
+    height: 220px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -323,7 +365,7 @@
 .home-page .destinations-coverflow-carousel {
   position: relative;
   width: 100%;
-  height: 480px;
+  height: 540px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,11 +373,11 @@
 
 .home-page .coverflow-card {
   position: absolute;
-  left: calc(50% - 130px);
+  left: calc(50% - 145px);
   top: 15px;
-  width: 260px;
-  height: 450px;
-  border-radius: 28px;
+  width: 290px;
+  height: 490px;
+  border-radius: 30px;
   overflow: hidden;
   background: #ffffff;
   cursor: pointer;
@@ -400,40 +442,40 @@
   border-color: #ffffff;
 }
 
-/* Coverflow Card Position Transforms */
+/* Coverflow Card Position Transforms - Significantly Increased Size */
 .home-page .coverflow-card[data-pos="left-2"] {
-  transform: translateX(-340px) scale(0.72);
+  transform: translateX(-430px) scale(0.90);
   z-index: 3;
-  opacity: 0.75;
-  box-shadow: 0 8px 25px rgba(15, 39, 68, 0.1);
+  opacity: 0.88;
+  box-shadow: 0 12px 35px rgba(15, 39, 68, 0.14);
 }
 
 .home-page .coverflow-card[data-pos="left-1"] {
-  transform: translateX(-185px) scale(0.86);
+  transform: translateX(-230px) scale(0.96);
   z-index: 6;
-  opacity: 0.92;
-  box-shadow: 0 14px 35px rgba(15, 39, 68, 0.16);
+  opacity: 0.96;
+  box-shadow: 0 18px 45px rgba(15, 39, 68, 0.2);
 }
 
 .home-page .coverflow-card[data-pos="center"] {
-  transform: translateX(0px) scale(1.06);
+  transform: translateX(0px) scale(1.10);
   z-index: 10;
   opacity: 1;
-  box-shadow: 0 22px 50px rgba(15, 39, 68, 0.28);
+  box-shadow: 0 26px 60px rgba(15, 39, 68, 0.32);
 }
 
 .home-page .coverflow-card[data-pos="right-1"] {
-  transform: translateX(185px) scale(0.86);
+  transform: translateX(230px) scale(0.96);
   z-index: 6;
-  opacity: 0.92;
-  box-shadow: 0 14px 35px rgba(15, 39, 68, 0.16);
+  opacity: 0.96;
+  box-shadow: 0 18px 45px rgba(15, 39, 68, 0.2);
 }
 
 .home-page .coverflow-card[data-pos="right-2"] {
-  transform: translateX(340px) scale(0.72);
+  transform: translateX(430px) scale(0.90);
   z-index: 3;
-  opacity: 0.75;
-  box-shadow: 0 8px 25px rgba(15, 39, 68, 0.1);
+  opacity: 0.88;
+  box-shadow: 0 12px 35px rgba(15, 39, 68, 0.14);
 }
 
 /* Floating Drag Handle Badge */
@@ -461,6 +503,15 @@
 .home-page .drag-badge:hover {
   background: rgba(15, 39, 68, 0.95);
   transform: translateY(-50%) scale(1.05);
+}
+
+/* --- Section 3 Responsive Media Queries --- */
+@media (max-width: 768px) {
+  .home-page .destination-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -502,22 +553,22 @@
   margin: 0 auto;
 }
 
-/* 3-Image Media Collage */
+/* 3-Image Media Collage - Exact Reference Outlines */
 .home-page .plan-media-collage-3 {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: center;
 }
 
 .home-page .collage-left-col {
-  flex: 0 0 205px;
-  max-width: 205px;
+  flex: 0 0 220px;
+  max-width: 220px;
 }
 
 .home-page .collage-img-tall {
-  width: 205px;
-  height: 420px;
-  border-radius: 110px 110px 24px 24px;
+  width: 220px;
+  height: 440px;
+  border-radius: 150px 150px 150px 0;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(15, 39, 68, 0.12);
   background: #f3f8fa;
@@ -533,15 +584,15 @@
 .home-page .collage-right-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  flex: 0 0 185px;
-  max-width: 185px;
+  gap: 18px;
+  flex: 0 0 200px;
+  max-width: 200px;
 }
 
 .home-page .collage-img-top {
-  width: 185px;
-  height: 195px;
-  border-radius: 95px 95px 24px 24px;
+  width: 200px;
+  height: 205px;
+  border-radius: 150px 150px 150px 0;
   overflow: hidden;
   box-shadow: 0 12px 28px rgba(15, 39, 68, 0.1);
   background: #f3f8fa;
@@ -555,9 +606,9 @@
 }
 
 .home-page .collage-img-bottom {
-  width: 185px;
-  height: 185px;
-  border-radius: 50%;
+  width: 200px;
+  height: 205px;
+  border-radius: 150px 0 150px 150px;
   overflow: hidden;
   box-shadow: 0 12px 28px rgba(15, 39, 68, 0.1);
   background: #f3f8fa;
@@ -694,6 +745,21 @@
 .home-page .badge-rating .star-icon {
   color: #e74c3c;
   font-size: 14px;
+}
+
+/* --- Section 4 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page .plan-trip-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page .plan-media-collage-3 {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -861,6 +927,19 @@
   pointer-events: none;
 }
 
+/* --- Section 5 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page .tours-grid-carousel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .tours-grid-carousel {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --------------------------------------------------------------------------
    6. GALLERY SECTION
    -------------------------------------------------------------------------- */
@@ -955,6 +1034,19 @@
   height: 385px;
   border-radius: 26px;
   box-shadow: 0 18px 42px rgba(15, 39, 68, 0.16);
+}
+
+/* --- Section 6 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page .gallery-staggered-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .gallery-staggered-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1066,6 +1158,22 @@
   font-size: 14px;
   font-weight: 600;
   color: #526860;
+}
+
+/* --- Section 7 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page .stats-wave-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .stats-wave-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1220,6 +1328,19 @@
   background: #20b2aa;
   width: 11px;
   height: 11px;
+}
+
+/* --- Section 8 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page .guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .guides-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1397,6 +1518,19 @@
   transform: translateY(-4px);
 }
 
+/* --- Section 9 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page .testimonial-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .testimonial-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --------------------------------------------------------------------------
    10. BLOG & NEWS SECTION
    -------------------------------------------------------------------------- */
@@ -1527,6 +1661,25 @@
   box-shadow: 0 6px 18px rgba(32, 178, 170, 0.3);
 }
 
+/* --- Section 10 Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-page .blog-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .blog-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .blog-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    11. NEWSLETTER BANNER
    -------------------------------------------------------------------------- */
@@ -1599,300 +1752,21 @@
   background: #20b2aa;
 }
 
-/* --------------------------------------------------------------------------
-   FOOTER COMPONENT STYLES
-   -------------------------------------------------------------------------- */
-.site-footer {
-  background-color: #ffffff;
-  padding: 75px 0 0;
-  position: relative;
-  color: #526860;
-  font-size: 14px;
-}
-
-.site-footer .footer-top-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.9fr 1fr 1fr;
-  gap: 30px;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding-bottom: 70px;
-}
-
-.site-footer .brand-logo-clean {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  margin-bottom: 18px;
-}
-
-.site-footer .brand-text-wrap {
-  display: flex;
-  flex-direction: column;
-}
-
-.site-footer .brand-title {
-  font-size: 22px;
-  font-weight: 900;
-  color: #17362b;
-  line-height: 1;
-}
-
-.site-footer .brand-subtitle {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #526860;
-  font-weight: 600;
-}
-
-.site-footer .brand-desc-text {
-  font-size: 13.5px;
-  line-height: 1.65;
-  color: #526860;
-  margin-bottom: 22px;
-  max-width: 300px;
-}
-
-.site-footer .social-circles-row {
-  display: flex;
-  gap: 9px;
-}
-
-.site-footer .social-circle-sm {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #edf7f8;
-  color: #20b2aa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.site-footer .social-circle-sm:hover {
-  background: #20b2aa;
-  color: #ffffff;
-}
-
-.site-footer .footer-col-title {
-  font-size: 18px;
-  font-weight: 800;
-  color: #17362b;
-  margin-bottom: 24px;
-}
-
-.site-footer .useful-links-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.site-footer .useful-links-list a {
-  color: #526860;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.25s ease, transform 0.25s ease;
-  display: inline-block;
-}
-
-.site-footer .useful-links-list a:hover {
-  color: #20b2aa;
-  transform: translateX(4px);
-}
-
-.site-footer .contact-badges-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.site-footer .contact-badge-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 13.5px;
-  color: #526860;
-  line-height: 1.45;
-}
-
-.site-footer .contact-icon-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #edf7f8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.site-footer .insta-grid-3x2 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.site-footer .insta-thumb-box {
-  height: 72px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.site-footer .insta-thumb-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.site-footer .insta-thumb-box:hover img {
-  transform: scale(1.1);
-}
-
-.site-footer .scroll-top-btn {
-  position: absolute;
-  bottom: 75px;
-  right: 40px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #edf7f8;
-  border: 1.5px solid #20b2aa;
-  color: #20b2aa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 6px 16px rgba(32, 178, 170, 0.15);
-  transition: all 0.25s ease;
-  z-index: 10;
-}
-
-.site-footer .scroll-top-btn:hover {
-  background: #20b2aa;
-  color: #ffffff;
-}
-
-.site-footer .footer-bottom-dark-bar {
-  background: #17362b;
-  color: #ffffff;
-  padding: 16px 0;
-  font-size: 13px;
-}
-
-.site-footer .bottom-bar-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-.site-footer .bottom-payments-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.site-footer .we-accept-text {
-  opacity: 0.85;
-  font-size: 12px;
-}
-
-.site-footer .payment-icons-row {
-  display: flex;
-  gap: 8px;
-}
-
-.site-footer .pay-chip {
-  background: #ffffff;
-  color: #17362b;
-  border-radius: 4px;
-  padding: 3px 8px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-/* --------------------------------------------------------------------------
-   RESPONSIVE BREAKPOINTS (HOME PAGE SCOPED)
-   ========================================================================== */
-@media (max-width: 1024px) {
-  .home-page h1.hero-title {
-    font-size: 48px;
-  }
-
-  .home-page .categories-grid,
-  .home-page .tours-grid,
-  .home-page .guides-grid,
-  .home-page .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .home-page .destinations-showcase,
-  .home-page .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .home-page .plan-trip-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* --- Section 11 Responsive Media Queries --- */
 @media (max-width: 768px) {
-  .home-page h1.hero-title {
-    font-size: 36px;
-  }
-
-  .home-page .search-bar-card {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .home-page .search-field {
-    border-right: none;
-    border-bottom: 1px solid var(--border-light);
-    padding-right: 0;
-    padding-bottom: 12px;
-  }
-
-  .home-page .newsletter-card {
+  .home-page .newsletter-card-inline {
     flex-direction: column;
     text-align: center;
     gap: 24px;
-    padding: 36px 24px;
+    padding: 32px 24px;
   }
 
-  .home-page .newsletter-form {
+  .home-page .newsletter-form-inline {
     width: 100%;
     flex-direction: column;
   }
 
-  .home-page .categories-grid,
-  .home-page .tours-grid,
-  .home-page .guides-grid,
-  .home-page .gallery-grid,
-  .home-page .destinations-showcase,
-  .home-page .blog-grid,
-  .home-page .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-page .stat-card {
-    aspect-ratio: auto;
-    border-radius: var(--radius-md);
+  .home-page .newsletter-input-pill {
+    width: 100%;
   }
 }
