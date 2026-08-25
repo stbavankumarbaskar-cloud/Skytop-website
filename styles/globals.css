@@ -607,3 +607,251 @@ button {
     text-align: center;
   }
 }
+
+/* --------------------------------------------------------------------------
+   SHARED SITE FOOTER COMPONENT STYLES
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #ffffff;
+  padding: 75px 0 0;
+  position: relative;
+  color: #526860;
+  font-size: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.site-footer .footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.site-footer .brand-logo-clean {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+
+.site-footer .brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer .brand-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #17362b;
+  line-height: 1;
+}
+
+.site-footer .brand-subtitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #526860;
+  font-weight: 600;
+}
+
+.site-footer .brand-desc-text {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #526860;
+  margin-bottom: 22px;
+  max-width: 300px;
+}
+
+.site-footer .social-circles-row {
+  display: flex;
+  gap: 9px;
+}
+
+.site-footer .social-circle-sm {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #edf7f8;
+  color: #20b2aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.site-footer .social-circle-sm:hover {
+  background: #20b2aa;
+  color: #ffffff;
+}
+
+.site-footer .footer-col-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #17362b;
+  margin-bottom: 24px;
+}
+
+.site-footer .useful-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.site-footer .useful-links-list a {
+  color: #526860;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+}
+
+.site-footer .useful-links-list a:hover {
+  color: #20b2aa;
+  transform: translateX(4px);
+}
+
+.site-footer .contact-badges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.site-footer .contact-badge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13.5px;
+  color: #526860;
+  line-height: 1.45;
+}
+
+.site-footer .contact-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #edf7f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.site-footer .insta-grid-3x2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.site-footer .insta-thumb-box {
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.site-footer .insta-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.site-footer .insta-thumb-box:hover img {
+  transform: scale(1.1);
+}
+
+.site-footer .scroll-top-btn {
+  position: absolute;
+  bottom: 75px;
+  right: 40px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #edf7f8;
+  border: 1.5px solid #20b2aa;
+  color: #20b2aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(32, 178, 170, 0.15);
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.site-footer .scroll-top-btn:hover {
+  background: #20b2aa;
+  color: #ffffff;
+}
+
+.site-footer .footer-bottom-dark-bar {
+  background: #17362b;
+  color: #ffffff;
+  padding: 16px 0;
+  font-size: 13px;
+}
+
+.site-footer .bottom-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.site-footer .bottom-payments-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-footer .we-accept-text {
+  opacity: 0.85;
+  font-size: 12px;
+}
+
+.site-footer .payment-icons-row {
+  display: flex;
+  gap: 8px;
+}
+
+.site-footer .pay-chip {
+  background: #ffffff;
+  color: #17362b;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 992px) {
+  .site-footer .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .bottom-bar-inner {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+}
