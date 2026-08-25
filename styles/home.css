@@ -1,0 +1,872 @@
+/* ==========================================================================
+   SKYTOP TRAVEL - HOME PAGE SCOPED STYLESHEET
+   Scoped under parent container: .home-page
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION
+   -------------------------------------------------------------------------- */
+.home-page .hero-section {
+  position: relative;
+  min-height: 85vh;
+  background: linear-gradient(180deg, rgba(15, 39, 68, 0.45) 0%, rgba(15, 39, 68, 0.65) 100%),
+              url('../assets/images/skytop-hero-natural-wonder.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 120px;
+  color: var(--white);
+}
+
+.home-page .hero-content {
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.home-page .hero-subtitle {
+  font-family: var(--font-script);
+  font-size: 34px;
+  font-weight: 700;
+  color: #5CE1E6;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Primary H1 Tag Rule Compliance */
+.home-page h1.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.home-page .hero-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Floating Search Bar */
+.home-page .search-bar-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 30px;
+}
+
+.home-page .search-bar-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  box-shadow: 0 20px 50px rgba(15, 39, 68, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.home-page .search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-right: 1px solid var(--border-light);
+  padding-right: 20px;
+}
+
+.home-page .search-field:last-of-type {
+  border-right: none;
+}
+
+.home-page .search-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.home-page .search-input,
+.home-page .search-select {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: transparent;
+  width: 100%;
+}
+
+.home-page .search-btn {
+  padding: 18px 36px;
+  font-size: 16px;
+  border-radius: var(--radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   2. TOUR CATEGORIES SECTION
+   -------------------------------------------------------------------------- */
+.home-page .categories-section {
+  padding: 100px 0 80px;
+  background-color: var(--bg-teal-tint);
+}
+
+.home-page .categories-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.home-page .category-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 16px 16px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-light);
+}
+
+.home-page .category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-teal);
+}
+
+.home-page .category-img-wrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px 16px 100px 100px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.home-page .category-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.home-page .category-card:hover img {
+  transform: scale(1.1);
+}
+
+.home-page .category-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.home-page .category-count {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   3. TOP DESTINATIONS SECTION
+   -------------------------------------------------------------------------- */
+.home-page .top-destination-section {
+  padding: 90px 0;
+  background: var(--white);
+}
+
+.home-page .destination-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 45px;
+}
+
+.home-page .destination-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.home-page .tab-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-light);
+  transition: var(--transition-fast);
+}
+
+.home-page .tab-btn.active,
+.home-page .tab-btn:hover {
+  background-color: var(--primary-teal);
+  color: var(--white);
+}
+
+.home-page .destinations-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.home-page .destination-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 420px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.home-page .destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.home-page .destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.home-page .destination-card:hover img {
+  transform: scale(1.08);
+}
+
+.home-page .destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(15, 39, 68, 0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  color: var(--white);
+}
+
+.home-page .destination-tag {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.home-page .destination-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   4. PLAN YOUR TRIP WITH US
+   -------------------------------------------------------------------------- */
+.home-page .plan-trip-section {
+  padding: 100px 0;
+  background-color: var(--bg-teal-tint);
+}
+
+.home-page .plan-trip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.home-page .plan-media-collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.home-page .collage-img {
+  border-radius: 120px 120px 20px 20px;
+  overflow: hidden;
+  height: 280px;
+  box-shadow: var(--shadow-md);
+}
+
+.home-page .collage-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-page .collage-img:nth-child(2) {
+  margin-top: 40px;
+}
+
+.home-page .plan-info {
+  padding-left: 20px;
+}
+
+.home-page .plan-info .section-title {
+  margin-bottom: 20px;
+}
+
+.home-page .plan-desc {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.home-page .feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.home-page .feature-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.home-page .feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-teal);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-teal);
+}
+
+.home-page .feature-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.home-page .feature-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.home-page .feature-text {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. MOST POPULAR TOUR SECTION
+   -------------------------------------------------------------------------- */
+.home-page .popular-tours-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.home-page .tours-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.home-page .tour-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.home-page .tour-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-teal);
+}
+
+.home-page .tour-img-box {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.home-page .tour-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.home-page .tour-card:hover .tour-img-box img {
+  transform: scale(1.1);
+}
+
+.home-page .tour-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(15, 39, 68, 0.75);
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.home-page .tour-content {
+  padding: 20px;
+}
+
+.home-page .tour-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.home-page .stars {
+  color: var(--rating-star);
+}
+
+.home-page .tour-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.home-page .tour-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary-teal);
+  margin-bottom: 16px;
+}
+
+.home-page .tour-price span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.home-page .tour-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.home-page .tour-book-link {
+  color: var(--primary-teal);
+  font-weight: 700;
+}
+
+.home-page .tour-book-link:hover {
+  color: var(--primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   6. GALLERY SECTION
+   -------------------------------------------------------------------------- */
+.home-page .recent-gallery-section {
+  padding: 90px 0;
+  background-color: var(--bg-teal-tint);
+}
+
+.home-page .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 45px;
+}
+
+.home-page .gallery-item {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 240px;
+  box-shadow: var(--shadow-sm);
+}
+
+.home-page .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.home-page .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   7. STATS COUNTER SECTION
+   -------------------------------------------------------------------------- */
+.home-page .stats-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.home-page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.home-page .stat-card {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  border: 2px dashed var(--primary-teal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-teal-tint);
+}
+
+.home-page .stat-number {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.home-page .stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. TOUR GUIDE SECTION
+   -------------------------------------------------------------------------- */
+.home-page .guides-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.home-page .guides-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.home-page .guide-card {
+  background: var(--bg-teal-tint);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-align: center;
+  padding: 24px 20px;
+  transition: var(--transition-smooth);
+}
+
+.home-page .guide-card:hover {
+  transform: translateY(-8px);
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+
+.home-page .guide-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.home-page .guide-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-page .guide-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.home-page .guide-role {
+  font-size: 13px;
+  color: var(--primary-teal);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   9. TESTIMONIAL & PARTNERS
+   -------------------------------------------------------------------------- */
+.home-page .testimonial-section {
+  padding: 100px 0;
+  background-color: var(--bg-teal-tint);
+}
+
+.home-page .testimonial-card {
+  max-width: 750px;
+  margin: 40px auto 0;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.home-page .testimonial-text {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text-main);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.home-page .client-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.home-page .client-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.home-page .client-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.home-page .client-role {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.home-page .partners-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  margin-top: 70px;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: var(--transition-smooth);
+}
+
+.home-page .partners-row:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.home-page .partner-logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   10. BLOG & NEWS SECTION
+   -------------------------------------------------------------------------- */
+.home-page .blog-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.home-page .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.home-page .blog-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.home-page .blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.home-page .blog-img-box {
+  height: 220px;
+  overflow: hidden;
+}
+
+.home-page .blog-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.home-page .blog-card:hover .blog-img-box img {
+  transform: scale(1.08);
+}
+
+.home-page .blog-content {
+  padding: 24px;
+}
+
+.home-page .blog-meta {
+  font-size: 13px;
+  color: var(--primary-teal);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.home-page .blog-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+.home-page .blog-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   11. NEWSLETTER BANNER
+   -------------------------------------------------------------------------- */
+.home-page .newsletter-section {
+  padding: 60px 0;
+  background: var(--white);
+}
+
+.home-page .newsletter-card {
+  background: linear-gradient(135deg, var(--primary-dark), #16365C);
+  border-radius: var(--radius-lg);
+  padding: 50px 60px;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.home-page .newsletter-text h3 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.home-page .newsletter-form {
+  display: flex;
+  gap: 12px;
+  width: 50%;
+  max-width: 480px;
+}
+
+.home-page .newsletter-input {
+  flex: 1;
+  padding: 16px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  background: var(--white);
+  color: var(--primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS (HOME PAGE SCOPED)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .home-page h1.hero-title {
+    font-size: 48px;
+  }
+
+  .home-page .categories-grid,
+  .home-page .tours-grid,
+  .home-page .guides-grid,
+  .home-page .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-page .destinations-showcase,
+  .home-page .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-page .plan-trip-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page h1.hero-title {
+    font-size: 36px;
+  }
+
+  .home-page .search-bar-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .home-page .search-field {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+
+  .home-page .newsletter-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 36px 24px;
+  }
+
+  .home-page .newsletter-form {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .home-page .categories-grid,
+  .home-page .tours-grid,
+  .home-page .guides-grid,
+  .home-page .gallery-grid,
+  .home-page .destinations-showcase,
+  .home-page .blog-grid,
+  .home-page .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .stat-card {
+    aspect-ratio: auto;
+    border-radius: var(--radius-md);
+  }
+}
