@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Primary Metadata -->
+  <title>Book Your Premium Ride - SkyTop Travels</title>
+  <meta name="description"
+    content="Book luxury ride with SkyTop Travels. Experience seamless travel with our high-end fleet and professional chauffeurs across Madurai and South India.">
+  <meta name="keywords"
+    content="skytop book, book premium ride, madurai travel booking, luxury bus rental, chauffeur service">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.skytop.com/book.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.skytop.com/book.html">
+  <meta property="og:title" content="Book Your Premium Ride - SkyTop Travels">
+  <meta property="og:description"
+    content="Experience seamless travel with our high-end fleet and professional chauffeurs.">
+  <meta property="og:image" content="assets/images/skytop-hero-natural-wonder.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/globals.css">
+  <link rel="stylesheet" href="styles/book.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "SkyTop Travels",
+    "url": "https://www.skytop.com/book.html",
+    "telephone": "+18001234567",
+    "description": "Book Your Premium Ride with SkyTop Travels."
+  }
+  </script>
+</head>
+
+<body class="book-page">
+
+  <!-- Header Component Include -->
+  <div data-include="header.html">
+    <!-- Top Header Contact & Currency Bar -->
+    <aside class="top-bar" aria-label="Top contact and settings bar">
+      <div class="container top-bar-inner">
+        <div class="top-bar-left">
+          <div class="top-info-item">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            <span>350 5th Ave, New York, NY 10118</span>
+          </div>
+          <div class="top-info-item">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <a href="mailto:info@skytop.com">info@skytop.com</a>
+          </div>
+          <div class="top-info-item">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+            </svg>
+            <a href="tel:+18001234567">+1 800 123 4567</a>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <div class="top-bar-selectors">
+            <select class="top-selector" aria-label="Select Currency">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+            </select>
+            <select class="top-selector" aria-label="Select Language">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Navbar Header -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="navbar" aria-label="Main Site Navigation">
+          <a href="index.html" class="brand-logo" title="SkyTop Home">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+              </svg>
+            </div>
+            <span>Sky<span class="highlight">Top</span></span>
+          </a>
+
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About us</a></li>
+            <li><a href="index.html#destinations" class="nav-link">Destination</a></li>
+            <li><a href="book.html" class="nav-link active">Book</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="book.html" class="btn btn-primary">Book Now &rarr;</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="backdrop-overlay" id="backdropOverlay"></div>
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation Drawer">
+      <div class="drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-logo-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+            </svg>
+          </div>
+          <span>Sky<span class="highlight">Top</span></span>
+        </a>
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About us</a>
+        <a href="index.html#destinations">Destination</a>
+        <a href="book.html">Book</a>
+        <a href="index.html#services">Our Services</a>
+        <a href="index.html#tours">Popular Tours</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#contact">Contact us</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+
+    <!-- 1. Hero Banner Section -->
+    <section class="book-hero" aria-label="Book Your Ride Banner">
+      <div class="container">
+        <span class="book-hero-subtitle">Start your journey with us</span>
+        <h1 class="book-hero-title">Book Your Premium Ride</h1>
+        <p class="book-hero-desc">
+          Experience seamless travel with our high-end fleet and professional chauffeurs. Your comfort is our priority.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Wizard Booking Card (Overlapping Hero) -->
+    <div class="wizard-container">
+      <div class="wizard-card">
+
+        <!-- Stepper Navigation Header -->
+        <div class="stepper-bar">
+          <div class="stepper-line">
+            <div class="stepper-line-fill" id="stepperLineFill"></div>
+          </div>
+
+          <div class="step-item active" data-step="1" id="stepIndicator1">
+            <div class="step-icon-circle">📍</div>
+            <span class="step-label">TRIP DETAILS</span>
+          </div>
+
+          <div class="step-item" data-step="2" id="stepIndicator2">
+            <div class="step-icon-circle">🚘</div>
+            <span class="step-label">VEHICLE</span>
+          </div>
+
+          <div class="step-item" data-step="3" id="stepIndicator3">
+            <div class="step-icon-circle">👤</div>
+            <span class="step-label">DETAILS</span>
+          </div>
+        </div>
+
+        <!-- Step 1 Form Panel: Trip Details -->
+        <div class="wizard-step-panel active" id="stepPanel1">
+          <form id="tripDetailsForm">
+            <div class="form-grid-2x2">
+
+              <div class="field-box">
+                <label class="field-label" for="pickupLoc">Pickup Location</label>
+                <div class="input-with-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  <input type="text" id="pickupLoc" class="form-input" placeholder="Enter pickup address or landmark"
+                    required>
+                </div>
+              </div>
+
+              <div class="field-box">
+                <label class="field-label" for="dropoffLoc">Drop-off Location</label>
+                <div class="input-with-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  <input type="text" id="dropoffLoc" class="form-input" placeholder="Enter destination" required>
+                </div>
+              </div>
+
+              <div class="field-box">
+                <label class="field-label" for="pickupDate">Pickup Date</label>
+                <div class="input-with-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z" />
+                  </svg>
+                  <input type="date" id="pickupDate" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="field-box">
+                <label class="field-label" for="pickupTime">Pickup Time</label>
+                <div class="input-with-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                  </svg>
+                  <input type="time" id="pickupTime" class="form-input" required>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="wizard-actions">
+              <button type="submit" class="btn-continue">
+                Continue to Vehicle &rarr;
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Step 2 Form Panel: Vehicle Selection -->
+        <div class="wizard-step-panel" id="stepPanel2">
+          <div class="field-label" style="margin-bottom: 16px; font-size: 15px;">Choose Your Vehicle Category:</div>
+
+          <div class="vehicle-cards-grid">
+            <div class="v-card selected" data-vname="Luxury Bus" data-vprice="$150/day">
+              <div class="v-icon">🚌</div>
+              <div class="v-title">Luxury Bus</div>
+              <div class="v-capacity">40 - 50 Seats</div>
+              <div class="v-price">$150 / day</div>
+            </div>
+
+            <div class="v-card" data-vname="Tempo Traveller" data-vprice="$95/day">
+              <div class="v-icon">🚐</div>
+              <div class="v-title">Tempo Traveller</div>
+              <div class="v-capacity">12 - 20 Seats</div>
+              <div class="v-price">$95 / day</div>
+            </div>
+
+            <div class="v-card" data-vname="Premium SUV" data-vprice="$65/day">
+              <div class="v-icon">🚘</div>
+              <div class="v-title">Premium SUV</div>
+              <div class="v-capacity">6 - 7 Seats</div>
+              <div class="v-price">$65 / day</div>
+            </div>
+
+            <div class="v-card" data-vname="Executive Sedan" data-vprice="$45/day">
+              <div class="v-icon">🚗</div>
+              <div class="v-title">Executive Sedan</div>
+              <div class="v-capacity">4 Seats</div>
+              <div class="v-price">$45 / day</div>
+            </div>
+          </div>
+
+          <div class="wizard-actions">
+            <button type="button" class="btn-back" id="backToStep1">&larr; Back</button>
+            <button type="button" class="btn-continue" id="goToStep3">
+              Continue to Details &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3 Form Panel: Passenger & Contact Details -->
+        <div class="wizard-step-panel" id="stepPanel3">
+          <form id="passengerDetailsForm">
+            <div class="form-grid-2x2">
+              <div class="field-box">
+                <label class="field-label" for="custName">Full Name</label>
+                <input type="text" id="custName" class="form-input" style="padding-left: 16px;" placeholder="John Doe"
+                  required>
+              </div>
+
+              <div class="field-box">
+                <label class="field-label" for="custPhone">Phone Number</label>
+                <input type="tel" id="custPhone" class="form-input" style="padding-left: 16px;"
+                  placeholder="+91 98765 43210" required>
+              </div>
+
+              <div class="field-box">
+                <label class="field-label" for="custEmail">Email Address</label>
+                <input type="email" id="custEmail" class="form-input" style="padding-left: 16px;"
+                  placeholder="john@example.com" required>
+              </div>
+
+              <div class="field-box">
+                <label class="field-label" for="custPassengers">Total Passengers</label>
+                <select id="custPassengers" class="form-input" style="padding-left: 16px;">
+                  <option value="1-2">1 - 2 Passengers</option>
+                  <option value="3-6">3 - 6 Passengers</option>
+                  <option value="7-15">7 - 15 Passengers</option>
+                  <option value="16+">16+ Group Passengers</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="wizard-actions">
+              <button type="button" class="btn-back" id="backToStep2">&larr; Back</button>
+              <button type="submit" class="btn-continue">
+                Confirm &amp; Book Ride &rarr;
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. Special Request Section (Need a Custom Trip?) -->
+    <section class="custom-trip-section">
+      <div class="container">
+        <div class="custom-trip-grid">
+
+          <div class="custom-media-arch">
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+              alt="Person planning custom trip itinerary on laptop">
+          </div>
+
+          <div class="custom-info-content">
+            <span class="special-tag">SPECIAL REQUEST</span>
+            <h2 class="custom-heading">Need a Custom Trip?</h2>
+            <p class="custom-desc">
+              Planning a multi-day tour, corporate event, or a complex itinerary? Our travel experts are here to design
+              the perfect journey tailored to your specific needs.
+            </p>
+
+            <div class="check-feature-list">
+              <div class="check-feature-item">
+                <div class="check-icon">&#10003;</div>
+                <span>Dedicated Travel Consultant</span>
+              </div>
+              <div class="check-feature-item">
+                <div class="check-icon">&#10003;</div>
+                <span>Flexible Scheduling</span>
+              </div>
+              <div class="check-feature-item">
+                <div class="check-icon">&#10003;</div>
+                <span>Premium Fleet Selection</span>
+              </div>
+            </div>
+
+            <a href="index.html#contact" class="btn-request-quote">
+              Request a Quote &#128196;
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Service Coverage Section -->
+    <section class="coverage-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Service Coverage</h2>
+          <p style="color: var(--text-muted); font-size: 15px; margin-top: 6px;">
+            Explore the regions where our premium fleets operate.
+          </p>
+        </div>
+
+        <div class="coverage-grid">
+          <div class="hub-card">
+            <h3 class="hub-title">Primary Hubs</h3>
+            <p class="hub-text">Madurai, Chennai, Coimbatore, and extending across major South Indian destinations.</p>
+          </div>
+
+          <div class="regions-grid">
+            <div class="region-badge-card">
+              <div class="region-dot"></div>
+              <span>Madurai &amp; Southern Hub</span>
+            </div>
+            <div class="region-badge-card">
+              <div class="region-dot"></div>
+              <span>Chennai &amp; Northern Metro</span>
+            </div>
+            <div class="region-badge-card">
+              <div class="region-dot"></div>
+              <span>Coimbatore &amp; Nilgiris</span>
+            </div>
+            <div class="region-badge-card">
+              <div class="region-dot"></div>
+              <span>Bangalore &amp; Interstate Routes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Component Include -->
+  <div data-include="footer.html">
+    <!-- Site Footer -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html" class="brand-logo">
+              <div class="brand-logo-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+                </svg>
+              </div>
+              <span>Sky<span class="highlight">Top</span></span>
+            </a>
+            <p>SkyTop is a premier travel agency dedicated to creating unforgettable journey experiences around the
+              world with safety, comfort, and luxury.</p>
+            <div class="social-links">
+              <a href="https://facebook.com" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                </svg></a>
+              <a href="https://twitter.com" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                </svg></a>
+              <a href="https://instagram.com" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg></a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="book.html">Book Your Tour</a></li>
+              <li><a href="index.html#destinations">Tour Destination</a></li>
+              <li><a href="index.html#tours">Tour Package</a></li>
+              <li><a href="index.html#services">Our Services</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Get In Touch</h3>
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+                <span>350 5th Ave, New York, NY 10118, USA</span>
+              </div>
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+                <span>+1 800 123 4567</span>
+              </div>
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <span>info@skytop.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Instagram Post</h3>
+            <div class="instagram-grid">
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-greece.jpg" alt="Instagram post Greece" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-thailand.jpg" alt="Instagram post Thailand" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-dubai.jpg" alt="Instagram post Dubai" loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-switzerland.jpg" alt="Instagram post Switzerland"
+                  loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-hero-natural-wonder.jpg" alt="Instagram post Tropical beach"
+                  loading="lazy">
+              </div>
+              <div class="instagram-thumb">
+                <img src="assets/images/skytop-destination-greece.jpg" alt="Instagram post Island view" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Copyright &copy; 2026 SkyTop. All Rights Reserved.</p>
+          <div class="payment-methods">
+            <span class="payment-badge">VISA</span>
+            <span class="payment-badge">MASTERCARD</span>
+            <span class="payment-badge">PAYPAL</span>
+            <span class="payment-badge">AMEX</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Step wizard navigation logic
+      const stepIndicators = [
+        document.getElementById('stepIndicator1'),
+        document.getElementById('stepIndicator2'),
+        document.getElementById('stepIndicator3')
+      ];
+
+      const stepPanels = [
+        document.getElementById('stepPanel1'),
+        document.getElementById('stepPanel2'),
+        document.getElementById('stepPanel3')
+      ];
+
+      const lineFill = document.getElementById('stepperLineFill');
+
+      function goToStep(stepNum) {
+        stepPanels.forEach((panel, i) => {
+          if (i === stepNum - 1) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+
+        stepIndicators.forEach((ind, i) => {
+          ind.classList.remove('active', 'completed');
+          if (i === stepNum - 1) {
+            ind.classList.add('active');
+          } else if (i < stepNum - 1) {
+            ind.classList.add('completed');
+          }
+        });
+
+        if (lineFill) {
+          if (stepNum === 1) lineFill.style.width = '0%';
+          if (stepNum === 2) lineFill.style.width = '50%';
+          if (stepNum === 3) lineFill.style.width = '100%';
+        }
+      }
+
+      // Step 1 Form Submit -> Step 2
+      const tripDetailsForm = document.getElementById('tripDetailsForm');
+      if (tripDetailsForm) {
+        tripDetailsForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          goToStep(2);
+        });
+      }
+
+      // Vehicle Card Selection
+      const vehicleCards = document.querySelectorAll('.v-card');
+      vehicleCards.forEach(card => {
+        card.addEventListener('click', () => {
+          vehicleCards.forEach(c => c.classList.remove('selected'));
+          card.classList.add('selected');
+        });
+      });
+
+      // Step 2 Buttons
+      document.getElementById('backToStep1')?.addEventListener('click', () => goToStep(1));
+      document.getElementById('goToStep3')?.addEventListener('click', () => goToStep(3));
+
+      // Step 3 Buttons & Final Submit
+      document.getElementById('backToStep2')?.addEventListener('click', () => goToStep(2));
+
+      const passengerDetailsForm = document.getElementById('passengerDetailsForm');
+      if (passengerDetailsForm) {
+        passengerDetailsForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const pickup = document.getElementById('pickupLoc')?.value || 'Pickup';
+          const dropoff = document.getElementById('dropoffLoc')?.value || 'Destination';
+          const name = document.getElementById('custName')?.value || 'Customer';
+          alert(`🎉 Ride Booking Confirmed!\n\nThank you ${name}! Your ride from ${pickup} to ${dropoff} has been reserved. Our SkyTop chauffeur will contact you shortly.`);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
