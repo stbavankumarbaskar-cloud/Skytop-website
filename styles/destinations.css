@@ -263,19 +263,80 @@
 /* Floating Search Bar Responsive Media Queries */
 @media (max-width: 992px) {
   .destinations-page .dest-search-card {
+    height: auto;
+    min-height: auto;
     border-radius: 20px;
     flex-direction: column;
-    padding: 16px;
-    gap: 12px;
+    padding: 18px 16px;
+    gap: 14px;
   }
 
   .destinations-page .dest-search-divider {
     display: none;
   }
 
-  .destinations-page .btn-dest-search {
+  .destinations-page .btn-dest-search,
+  .destinations-page .dest-search-btn {
     width: 100%;
     justify-content: center;
+    height: 46px;
+    border-radius: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .destinations-page .destinations-hero {
+    position: relative;
+    min-height: auto;
+    height: auto;
+    padding: 70px 16px 40px;
+    overflow: visible;
+  }
+
+  .destinations-page .hero-content-center {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .destinations-page .destinations-hero-title {
+    font-size: clamp(24px, 6.5vw, 34px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .destinations-page .destinations-hero-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+
+  .destinations-page .dest-search-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto 0;
+    box-sizing: border-box;
+  }
+
+  .destinations-page .dest-search-card {
+    height: auto;
+    min-height: auto;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 16px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .destinations-page .dest-search-field {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 4px;
   }
 }
 
