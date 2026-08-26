@@ -24,38 +24,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function initNavigation() {
-    const mobileToggleBtn = document.getElementById('mobileMenuToggle');
-    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-    const drawerCloseBtn = document.getElementById('drawerClose');
-    const backdropOverlay = document.getElementById('backdropOverlay');
+    // Robust Event Delegation for Navigation Drawer (Guarantees click handling on all pages)
+    document.addEventListener('click', (e) => {
+      const toggleBtn = e.target.closest('#mobileMenuToggle');
+      const closeBtn = e.target.closest('#drawerClose');
+      const backdrop = e.target.closest('#backdropOverlay');
 
-    function openDrawer() {
-      if (mobileNavDrawer && backdropOverlay) {
-        mobileNavDrawer.classList.add('open');
-        backdropOverlay.classList.add('active');
+      const drawer = document.getElementById('mobileNavDrawer');
+      const backdropOverlay = document.getElementById('backdropOverlay');
+
+      if (toggleBtn) {
+        e.preventDefault();
+        if (drawer) drawer.classList.add('open');
+        if (backdropOverlay) backdropOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
-      }
-    }
-
-    function closeDrawer() {
-      if (mobileNavDrawer && backdropOverlay) {
-        mobileNavDrawer.classList.remove('open');
-        backdropOverlay.classList.remove('active');
+      } else if (closeBtn || backdrop) {
+        e.preventDefault();
+        if (drawer) drawer.classList.remove('open');
+        if (backdropOverlay) backdropOverlay.classList.remove('active');
         document.body.style.overflow = '';
       }
-    }
-
-    if (mobileToggleBtn) {
-      mobileToggleBtn.addEventListener('click', openDrawer);
-    }
-
-    if (drawerCloseBtn) {
-      drawerCloseBtn.addEventListener('click', closeDrawer);
-    }
-
-    if (backdropOverlay) {
-      backdropOverlay.addEventListener('click', closeDrawer);
-    }
+    });
 
     // Active Navigation Link Highlighting
     const currentPath = window.location.pathname.toLowerCase();
