@@ -379,12 +379,47 @@ button {
   gap: 18px;
 }
 
+.mobile-nav-drawer .mobile-drawer-book-btn {
+  display: none !important;
+}
+
 .mobile-nav-links a {
   font-size: 17px;
   font-weight: 600;
   color: var(--primary-dark);
   padding: 10px 0;
   border-bottom: 1px solid var(--border-light);
+}
+
+/* Header Responsive Navigation Rules (<991px / Mobile) */
+@media (max-width: 991px) {
+  .site-header .nav-menu {
+    display: none !important;
+  }
+
+  .site-header .mobile-menu-toggle {
+    display: flex !important;
+  }
+
+  .site-header .header-book-btn {
+    display: none !important;
+  }
+
+  .mobile-nav-drawer .mobile-drawer-book-btn {
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: var(--primary-teal, #11a5c8);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: none !important;
+    box-shadow: 0 4px 14px rgba(17, 165, 200, 0.35);
+  }
 }
 
 .backdrop-overlay {

@@ -408,4 +408,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initHeroSlider();
+
+  // =========================================================================
+  // POPULAR TOURS MOBILE "SEE MORE" TOGGLE
+  // =========================================================================
+  const popularToursSeeMoreBtn = document.getElementById('popularToursSeeMoreBtn');
+  const popularToursCarousel = document.getElementById('popularToursCarousel');
+
+  if (popularToursSeeMoreBtn && popularToursCarousel) {
+    popularToursSeeMoreBtn.addEventListener('click', () => {
+      const isExpanded = popularToursCarousel.classList.toggle('expanded');
+      if (isExpanded) {
+        popularToursSeeMoreBtn.innerHTML = 'Show Less &uarr;';
+      } else {
+        popularToursSeeMoreBtn.innerHTML = 'See More &rarr;';
+      }
+    });
+  }
+
+  // =========================================================================
+  // TOUR GUIDE SELECTION TOGGLE (ACTIVE ON CLICK ONLY)
+  // =========================================================================
+  const guideCardBoxes = document.querySelectorAll('.guide-card-box');
+  guideCardBoxes.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.social-dot')) return;
+      const inner = card.querySelector('.guide-info-inner');
+      if (!inner) return;
+      const wasActive = inner.classList.contains('active-guide');
+      document.querySelectorAll('.guide-info-inner').forEach(el => el.classList.remove('active-guide'));
+      if (!wasActive) {
+        inner.classList.add('active-guide');
+      }
+    });
+  });
 });

@@ -212,57 +212,6 @@
   margin-top: 20px;
 }
 
-@media (max-width: 992px) {
-  .home-page .hero-section {
-    min-height: 90vh;
-    padding: 100px 0 20px;
-  }
-
-  .home-page h1.hero-title,
-  .home-page h2.hero-title {
-    font-size: 42px;
-  }
-
-  .home-page .hero-subtitle {
-    font-size: 26px;
-  }
-
-  .home-page .hero-slider-arrow {
-    width: 44px;
-    height: 44px;
-  }
-
-  .home-page .hero-slider-prev {
-    left: 15px;
-  }
-
-  .home-page .hero-slider-next {
-    right: 15px;
-  }
-
-  .home-page .hero-slider-dots {
-    bottom: 190px;
-    right: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .home-page h1.hero-title,
-  .home-page h2.hero-title {
-    font-size: 32px;
-  }
-
-  .home-page .hero-description {
-    font-size: 14px;
-  }
-
-  .home-page .hero-slider-dots {
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 230px;
-  }
-}
-
 .home-page .search-bar-card {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -316,27 +265,177 @@
   }
 }
 
+@media (max-width: 992px) {
+  .home-page .hero-section {
+    min-height: 90vh;
+    padding: 100px 0 20px;
+  }
+
+  .home-page h1.hero-title,
+  .home-page h2.hero-title {
+    font-size: 42px;
+  }
+
+  .home-page .hero-subtitle {
+    font-size: 26px;
+  }
+
+  .home-page .hero-slider-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .home-page .hero-slider-prev {
+    left: 15px;
+  }
+
+  .home-page .hero-slider-next {
+    right: 15px;
+  }
+
+  .home-page .hero-slider-dots {
+    bottom: 190px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-page h1.hero-title,
+  .home-page h2.hero-title {
+    font-size: 32px;
+  }
+
+  .home-page .hero-description {
+    font-size: 14px;
+  }
+
+  .home-page .hero-slider-dots {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 230px;
+  }
+}
+
 @media (max-width: 768px) {
-  .home-page h1.hero-title {
-    font-size: 36px;
+  .home-page .hero-section {
+    position: relative;
+    min-height: 780px;
+    height: auto;
+    padding: 70px 0 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .home-page .hero-slides-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .home-page .hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 75px 16px 0;
+    box-sizing: border-box;
+  }
+
+  .home-page .hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .home-page .hero-subtitle {
+    font-size: clamp(18px, 4.5vw, 24px);
+    margin-bottom: 6px;
+  }
+
+  .home-page h1.hero-title,
+  .home-page h2.hero-title {
+    font-size: clamp(22px, 6vw, 30px);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .home-page .hero-description {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .home-page .hero-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .home-page .hero-btns .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  /* Destination Search Card Positioned NATURALLY Below Hero Text & Buttons */
+  .home-page .search-bar-wrapper {
+    position: relative;
+    z-index: 30;
+    margin-top: 345px;
+    margin-bottom: 15px;
+    width: calc(100% - 16px);
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .home-page .search-bar-card {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 20px;
   }
 
   .home-page .search-field {
     border-right: none;
     border-bottom: 1px solid var(--border-light);
     padding-right: 0;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
   }
-}
 
-@media (max-width: 600px) {
-  .home-page h1.hero-title {
-    font-size: 30px;
+  .home-page .search-btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .home-page .hero-slider-arrow {
+    display: none;
+  }
+
+  .home-page .hero-slider-dots {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 12px;
   }
 }
 
@@ -561,37 +660,117 @@
 }
 
 /* --- Section 2 Responsive Media Queries (One-By-One Mobile Display) --- */
-@media (max-width: 768px) {
+/* --- Section 2 Responsive Media Queries (Clean Mobile Display) --- */
+@media (max-width: 767px) {
+  .home-page .owl-carousel-wrapper {
+    padding: 10px 0 20px;
+    overflow: hidden;
+  }
+
   .home-page .categories-owl-carousel {
     position: relative;
-    min-height: 390px;
+    min-height: 410px;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  .home-page .owl-item-card {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scale(0.85);
-    opacity: 0;
-    pointer-events: none;
-    flex: 0 0 270px;
-    max-width: 270px;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+  /* Force ALL non-center cards to hide completely on mobile */
+  .home-page .owl-item-card[data-arc="left-2"],
+  .home-page .owl-item-card[data-arc="left-1"],
+  .home-page .owl-item-card[data-arc="right-1"],
+  .home-page .owl-item-card[data-arc="right-2"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) scale(0.85) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
   }
 
+  /* Absolute guarantee: HIDE all non-center title text & Read More buttons */
+  .home-page .owl-item-card:not([data-arc="center"]) .category-title,
+  .home-page .owl-item-card:not([data-arc="center"]) .category-read-more {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Active Center Card on Mobile */
   .home-page .owl-item-card[data-arc="center"] {
-    position: relative;
-    left: auto;
-    transform: translateX(0) scale(1);
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 10;
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 10 !important;
+    width: min(82vw, 300px) !important;
+    max-width: 300px !important;
+    flex: 0 0 auto !important;
+    margin: 0 auto !important;
+    text-align: center !important;
   }
 
-  .home-page .category-img-box {
-    height: 280px;
-    border-radius: 28px;
+  .home-page .owl-item-card[data-arc="center"] .category-img-box {
+    width: 100% !important;
+    height: min(82vw, 290px) !important;
+    border-radius: 28px !important;
+    margin: 0 auto 18px !important;
+    box-shadow: 0 18px 40px rgba(23, 54, 43, 0.22) !important;
+    border: 2px solid rgba(38, 184, 186, 0.4) !important;
+    overflow: hidden !important;
+  }
+
+  .home-page .owl-item-card[data-arc="center"] .category-img-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .home-page .owl-item-card[data-arc="center"] .category-title {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #17362b !important;
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    word-break: break-word !important;
+  }
+
+  .home-page .owl-item-card[data-arc="center"] .category-read-more {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #26B8BA !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-top: 2px !important;
+  }
+
+  /* Navigation Arrow Buttons on Mobile */
+  .home-page .categories-nav-btn {
+    top: calc(min(82vw, 290px) / 2) !important;
+    transform: translateY(-50%) !important;
+    z-index: 25 !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .home-page .categories-nav-btn.prev-btn {
+    left: 2px !important;
+  }
+
+  .home-page .categories-nav-btn.next-btn {
+    right: 2px !important;
+  }
+
+  .home-page .owl-dots-container {
+    margin-top: 25px !important;
   }
 }
 
@@ -1066,10 +1245,59 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .home-page .plan-media-collage-3 {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+  }
+
+  .home-page .collage-left-col {
+    flex: 0 0 160px;
+    max-width: 160px;
+  }
+
+  .home-page .collage-img-tall {
+    width: 160px;
+    height: 310px;
+    border-radius: 100px 100px 100px 0;
+    box-shadow: 0 12px 28px rgba(15, 39, 68, 0.12);
+  }
+
+  .home-page .collage-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 0 0 150px;
+    max-width: 150px;
+  }
+
+  .home-page .collage-img-top {
+    width: 150px;
+    height: 149px;
+    border-radius: 100px 100px 100px 0;
+    box-shadow: 0 10px 22px rgba(15, 39, 68, 0.1);
+  }
+
+  .home-page .collage-img-bottom {
+    width: 150px;
+    height: 149px;
+    border-radius: 100px 0 100px 100px;
+    box-shadow: 0 10px 22px rgba(15, 39, 68, 0.1);
+  }
+
+  .home-page .collage-img-tall img,
+  .home-page .collage-img-top img,
+  .home-page .collage-img-bottom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 }
 
@@ -1238,6 +1466,37 @@
   pointer-events: none;
 }
 
+/* Mobile See More Button */
+.home-page .tours-see-more-wrap {
+  display: none;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.home-page .btn-see-more-tours {
+  padding: 12px 32px;
+  border-radius: 50px;
+  background: #ffffff;
+  color: #17362b;
+  border: 1.5px solid #17362b;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(23, 54, 43, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-page .btn-see-more-tours:hover {
+  background: #17362b;
+  color: #ffffff;
+  border-color: #17362b;
+  box-shadow: 0 8px 20px rgba(23, 54, 43, 0.25);
+  transform: translateY(-2px);
+}
+
 /* --- Section 5 Responsive Media Queries --- */
 @media (max-width: 1024px) {
   .home-page .tours-grid-carousel {
@@ -1248,6 +1507,19 @@
 @media (max-width: 768px) {
   .home-page .tours-grid-carousel {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-page .tours-grid-carousel:not(.expanded) .tour-card:nth-child(n+3) {
+    display: none !important;
+  }
+
+  .home-page .tours-grid-carousel.expanded .tour-card {
+    display: block !important;
+  }
+
+  .home-page .tours-see-more-wrap {
+    display: flex;
   }
 }
 
@@ -1355,8 +1627,113 @@
 }
 
 @media (max-width: 768px) {
+  .home-page .recent-gallery-section {
+    padding: 40px 0 45px;
+    overflow: hidden;
+  }
+
+  .home-page .recent-gallery-section .section-subtitle-script {
+    font-size: clamp(22px, 5vw, 28px);
+    text-align: center;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .home-page .recent-gallery-section .section-title-owl {
+    font-size: clamp(24px, 6vw, 32px);
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
   .home-page .gallery-staggered-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 18px;
+    box-sizing: border-box;
+  }
+
+  /* Row 1 Left: Mountain Valley Card */
+  .home-page .card-outer-left {
+    height: 230px;
+    border-radius: 20px;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  /* Row 1 Right: Stacked Beach Sunset + Santorini Cards */
+  .home-page .gallery-col-stacked:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .home-page .gallery-col-stacked:nth-child(2) .gallery-card {
+    height: 110px;
+    border-radius: 16px;
+    width: 100%;
+  }
+
+  /* Row 2 Full Width Landscape: Swiss Alpine Village Card */
+  .home-page .card-center-tall {
+    grid-column: 1 / -1;
+    height: 185px;
+    border-radius: 22px;
+    width: 100%;
+    margin: 2px 0;
+  }
+
+  /* Row 3 Side-by-Side: Friends on Cliff + Woman on Island */
+  .home-page .gallery-col-stacked:nth-child(4) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .home-page .gallery-col-stacked:nth-child(4) .gallery-card {
+    height: 145px;
+    border-radius: 18px;
+    width: 100%;
+  }
+
+  /* Row 4 Full Width / Bottom: Yacht Card */
+  .home-page .card-outer-right {
+    grid-column: 1 / -1;
+    height: 165px;
+    border-radius: 20px;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .home-page .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Paper Plane Decor Accent Position on Mobile */
+  .home-page .decor-airplane-left {
+    top: 285px;
+    left: 12px;
+    width: 38px;
+    height: 38px;
+    opacity: 0.85;
+  }
+
+  .home-page .decor-airplane-left svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .home-page .flight-loop-svg {
+    display: none;
   }
 }
 
