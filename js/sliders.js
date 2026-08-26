@@ -60,15 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // TOUR CATEGORIES OWL CAROUSEL ARC SLIDER
+  // TOUR CATEGORIES OWL CAROUSEL (CLICK & SWIPE ANIMATION ONLY)
   // =========================================================================
   const categoriesCarousel = document.getElementById('categoriesCarousel');
   const categoriesDotsContainer = document.getElementById('categoriesDots');
+  const categoriesPrevBtn = document.getElementById('categoriesPrev');
+  const categoriesNextBtn = document.getElementById('categoriesNext');
 
   if (categoriesCarousel) {
     const cards = Array.from(categoriesCarousel.querySelectorAll('.owl-item-card'));
     const totalCards = cards.length;
-    let activeIndex = 2; // Default center item (Airbirds)
+    let activeIndex = 2; // Default center item
 
     // Render Dots Navigation
     if (categoriesDotsContainer && totalCards > 0) {
@@ -116,14 +118,28 @@ document.addEventListener('DOMContentLoaded', () => {
       updateDots(activeIndex);
     }
 
-    // Add click listeners on cards
+    // Previous Button Click
+    if (categoriesPrevBtn) {
+      categoriesPrevBtn.addEventListener('click', () => {
+        setActiveSlide(activeIndex - 1);
+      });
+    }
+
+    // Next Button Click
+    if (categoriesNextBtn) {
+      categoriesNextBtn.addEventListener('click', () => {
+        setActiveSlide(activeIndex + 1);
+      });
+    }
+
+    // Card Click Navigation
     cards.forEach((card, idx) => {
       card.addEventListener('click', () => {
         setActiveSlide(idx);
       });
     });
 
-    // Touch / Swipe support with infinite loop
+    // Touch / Swipe support
     let startX = 0;
     let isDragging = false;
 
@@ -150,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // TOP DESTINATION 3D COVERFLOW OWL CAROUSEL (INFINITE LOOP)
+  // TOP DESTINATION 3D COVERFLOW OWL CAROUSEL (CLICK & SWIPE ANIMATION ONLY)
   // =========================================================================
   const destinationsCarousel = document.getElementById('destinationsCarousel');
   const destinationTabsContainer = document.getElementById('destinationTabs');
