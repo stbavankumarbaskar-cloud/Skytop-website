@@ -447,10 +447,10 @@
   font-size: 18px;
   font-weight: 800;
   color: var(--about-dark-text);
-  margin-bottom: 4px;
+  margin-bottom: 4px;   
 }
 
-.about-page .member-role {
+.about-page .member-role { 
   display: block;
   font-size: 13px;
   font-weight: 700;
