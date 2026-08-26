@@ -1,0 +1,527 @@
+/* ==========================================================================
+   SKYTOP TRAVEL - ABOUT US PAGE SCOPED STYLESHEET
+   Clean Section-by-Section Organization with Co-located Responsive Media Queries
+   ========================================================================== */
+
+:root {
+  --about-cyan: #00A3C4;
+  --about-cyan-hover: #0088A3;
+  --about-dark-text: #0F172A;
+  --about-muted-text: #475569;
+  --about-light-bg: #F8FAFC;
+  --about-border: #E2E8F0;
+  --about-card-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.about-page {
+  background-color: #FFFFFF;
+  color: var(--about-dark-text);
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   1. ABOUT HERO BANNER SECTION
+   ========================================================================== */
+.about-page .about-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.about-page .about-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.about-page .hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-page .about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.85) 45%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+.about-page .hero-container {
+  position: relative;
+  z-index: 5;
+}
+
+.about-page .about-hero-card {
+  max-width: 580px;
+}
+
+.about-page .about-eyebrow {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--about-cyan);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.about-page .about-hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--about-dark-text);
+  margin-bottom: 20px;
+}
+
+.about-page .about-hero-title .highlight-cyan {
+  color: var(--about-cyan);
+}
+
+.about-page .about-hero-desc {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--about-muted-text);
+  margin-bottom: 32px;
+}
+
+.about-page .btn-meet-team {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--about-cyan);
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0, 163, 196, 0.35);
+}
+
+.about-page .btn-meet-team:hover {
+  background-color: var(--about-cyan-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 163, 196, 0.45);
+}
+
+/* --- Section 1 Responsive Media Queries --- */
+@media (max-width: 768px) {
+  .about-page .about-hero {
+    min-height: 460px;
+    padding: 60px 0;
+  }
+
+  .about-page .about-hero-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page .about-hero-title {
+    font-size: 34px;
+  }
+
+  .about-page .about-hero-desc {
+    font-size: 14.5px;
+  }
+}
+
+
+/* ==========================================================================
+   2. SETTING THE STANDARD FOR PREMIUM TRAVEL SECTION
+   ========================================================================== */
+.about-page .standard-section {
+  padding: 100px 0;
+  background-color: #FFFFFF;
+}
+
+.about-page .standard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-page .standard-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-page .oval-image-mask {
+  width: 100%;
+  max-width: 460px;
+  height: 380px;
+  border-radius: 46% 54% 50% 50% / 45% 45% 55% 55%;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  border: 4px solid #FFFFFF;
+}
+
+.about-page .oval-image-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-page .rating-floating-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--about-border);
+}
+
+.about-page .star-circle {
+  width: 36px;
+  height: 36px;
+  background-color: #0284C7;
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.about-page .rating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page .rating-score {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--about-dark-text);
+  line-height: 1.2;
+}
+
+.about-page .rating-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--about-muted-text);
+}
+
+.about-page .decade-badge {
+  display: inline-block;
+  background-color: #E0F2FE;
+  color: #0369A1;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.about-page .section-heading {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--about-dark-text);
+  margin-bottom: 20px;
+}
+
+.about-page .section-heading.text-center {
+  text-align: center;
+}
+
+.about-page .standard-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--about-muted-text);
+  margin-bottom: 32px;
+}
+
+.about-page .stats-cards-row {
+  display: flex;
+  gap: 24px;
+}
+
+.about-page .stat-card {
+  flex: 1;
+  background-color: #F8FAFC;
+  border: 1px solid var(--about-border);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-page .stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0284C7;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.about-page .stat-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--about-muted-text);
+  text-transform: uppercase;
+}
+
+/* --- Section 2 Responsive Media Queries --- */
+@media (max-width: 992px) {
+  .about-page .standard-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page .section-heading {
+    font-size: 28px;
+  }
+
+  .about-page .oval-image-mask {
+    height: 300px;
+  }
+
+  .about-page .stats-cards-row {
+    flex-direction: column;
+  }
+}
+
+
+/* ==========================================================================
+   3. OUR CORE VALUES SECTION
+   ========================================================================== */
+.about-page .values-section {
+  padding: 90px 0;
+  background-color: #F8FAFC;
+}
+
+.about-page .values-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 50px auto;
+}
+
+.about-page .section-subdesc {
+  font-size: 15px;
+  color: var(--about-muted-text);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.about-page .values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.about-page .value-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 36px 28px;
+  box-shadow: var(--about-card-shadow);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-page .value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+}
+
+.about-page .value-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.about-page .box-teal {
+  background-color: #CCFBF1;
+  color: #0D9488;
+}
+
+.about-page .box-cyan {
+  background-color: #E0F2FE;
+  color: #0284C7;
+}
+
+.about-page .box-amber {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.about-page .value-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--about-dark-text);
+  margin-bottom: 12px;
+}
+
+.about-page .value-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--about-muted-text);
+}
+
+/* --- Section 3 Responsive Media Queries --- */
+@media (max-width: 992px) {
+  .about-page .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   4. THE HANDS ON THE WHEEL (TEAM SECTION)
+   ========================================================================== */
+.about-page .team-section {
+  padding: 100px 0;
+  background-color: #FFFFFF;
+}
+
+.about-page .team-header {
+  text-align: left;
+  max-width: 580px;
+  margin: 0 0 40px 0;
+}
+
+.about-page .team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.about-page .team-card {
+  background-color: #F8FAFC;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--about-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-page .team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+.about-page .team-photo-wrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.about-page .team-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.about-page .team-card:hover .team-photo-wrap img {
+  transform: scale(1.05);
+}
+
+.about-page .team-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.about-page .member-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--about-dark-text);
+  margin-bottom: 4px;
+}
+
+.about-page .member-role {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0284C7;
+  margin-bottom: 8px;
+}
+
+.about-page .member-detail {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--about-muted-text);
+}
+
+/* --- Section 4 Responsive Media Queries --- */
+@media (max-width: 992px) {
+  .about-page .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   5. CERTIFIED & TRUSTED BY SECTION
+   ========================================================================== */
+.about-page .trusted-section {
+  padding: 40px 0 60px;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.about-page .trusted-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #94A3B8;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.about-page .trusted-badges-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-page .trusted-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.about-page .trusted-badge-item i {
+  font-size: 20px;
+  color: #0284C7;
+}
+
+/* --- Section 5 Responsive Media Queries --- */
+@media (max-width: 576px) {
+  .about-page .trusted-badges-row {
+    gap: 24px;
+  }
+}
