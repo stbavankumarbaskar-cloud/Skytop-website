@@ -56,6 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backdropOverlay) {
       backdropOverlay.addEventListener('click', closeDrawer);
     }
+
+    // Active Navigation Link Highlighting
+    const currentPath = window.location.pathname.toLowerCase();
+    const navLinks = document.querySelectorAll('.nav-menu .nav-link, .mobile-nav-links a');
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href')?.toLowerCase() || '';
+      if ((currentPath.includes('about.html') && href.includes('about.html')) ||
+          (currentPath.includes('destinations.html') && href.includes('destinations.html')) ||
+          (currentPath.includes('book.html') && href.includes('book.html')) ||
+          ((currentPath.endsWith('/') || currentPath.includes('index.html')) && href === 'index.html')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
   }
 
   loadIncludes();
