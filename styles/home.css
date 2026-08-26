@@ -9,41 +9,110 @@
 .home-page .hero-section {
   position: relative;
   min-height: 85vh;
-  background: linear-gradient(90deg, rgba(15, 39, 68, 0.65) 0%, rgba(15, 39, 68, 0.35) 50%, rgba(15, 39, 68, 0.1) 100%),
-              url('../assets/images/skytop-hero-natural-wonder.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 100px 0 120px;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 120px 0 30px;
   color: var(--white);
+  overflow: hidden;
+}
+
+/* Background Slides Wrapper */
+.home-page .hero-slides-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.home-page .hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.9s;
+  transform: scale(1.06);
+  display: flex;
+  align-items: center;
+  padding: 100px 0 140px;
+}
+
+.home-page .hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.home-page .hero-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(15, 39, 68, 0.85) 0%, rgba(15, 39, 68, 0.5) 55%, rgba(15, 39, 68, 0.25) 100%),
+              linear-gradient(0deg, rgba(15, 39, 68, 0.7) 0%, transparent 50%);
+  z-index: 1;
 }
 
 .home-page .hero-content {
+  position: relative;
+  z-index: 3;
   width: 100%;
   max-width: 1064px;
   text-align: left;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  animation: heroContentFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes heroContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-page .hero-subtitle {
   font-family: var(--font-script);
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 400;
-  color: #FFFFFF;
-  margin-bottom: 8px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  color: #FBBF24;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   display: block;
 }
 
-/* Primary H1 Tag Rule Compliance */
-.home-page h1.hero-title {
-  font-size: 64px;
+/* Primary H1 Tag & H2 Tag Rule Compliance */
+.home-page h1.hero-title,
+.home-page h2.hero-title {
+  font-size: 58px;
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -1px;
-  margin-bottom: 32px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  margin-bottom: 18px;
+  color: #FFFFFF;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.home-page .hero-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 28px;
+  max-width: 640px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .home-page .hero-btns {
@@ -53,11 +122,145 @@
   gap: 18px;
 }
 
+/* Navigation Arrow Controls */
+.home-page .hero-slider-arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(15, 39, 68, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.home-page .hero-slider-arrow:hover {
+  background: var(--primary, #0F2744);
+  border-color: #FBBF24;
+  color: #FBBF24;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.home-page .hero-slider-arrow:focus-visible {
+  outline: 2px solid #FBBF24;
+  outline-offset: 4px;
+}
+
+.home-page .hero-slider-prev {
+  left: 30px;
+}
+
+.home-page .hero-slider-next {
+  right: 30px;
+}
+
+/* Slide Indicator Dots */
+.home-page .hero-slider-dots {
+  position: absolute;
+  bottom: 140px;
+  right: 50px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 39, 68, 0.4);
+  padding: 8px 16px;
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-page .hero-dot-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-page .hero-dot-btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.home-page .hero-dot-btn.active {
+  width: 32px;
+  border-radius: 10px;
+  background: #FBBF24;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+}
+
 /* Floating Search Bar */
 .home-page .search-bar-wrapper {
+  position: relative;
+  z-index: 10;
   width: 100%;
   max-width: 1100px;
-  margin-top: 30px;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .home-page .hero-section {
+    min-height: 90vh;
+    padding: 100px 0 20px;
+  }
+
+  .home-page h1.hero-title,
+  .home-page h2.hero-title {
+    font-size: 42px;
+  }
+
+  .home-page .hero-subtitle {
+    font-size: 26px;
+  }
+
+  .home-page .hero-slider-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .home-page .hero-slider-prev {
+    left: 15px;
+  }
+
+  .home-page .hero-slider-next {
+    right: 15px;
+  }
+
+  .home-page .hero-slider-dots {
+    bottom: 190px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-page h1.hero-title,
+  .home-page h2.hero-title {
+    font-size: 32px;
+  }
+
+  .home-page .hero-description {
+    font-size: 14px;
+  }
+
+  .home-page .hero-slider-dots {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 230px;
+  }
 }
 
 .home-page .search-bar-card {

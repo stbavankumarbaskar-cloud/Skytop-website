@@ -84,24 +84,99 @@
   <main id="main-content">
 
     <!-- 1. Hero Section -->
-    <section class="hero-section" aria-label="Hero Banner">
-      <div class="container hero-content">
-        <span class="hero-subtitle">Get unforgettable pleasure with us</span>
-        <!-- H1 SEO Rule: Exactly ONE primary H1 on the home page -->
-        <h1 class="hero-title">Natural Wonder<br>Of The World</h1>
-
-        <div class="hero-btns">
-          <a href="#destinations" class="btn btn-primary">Explore Tours &rarr;</a>
-          <a href="#services" class="btn btn-outline-glass">Our Services &rarr;</a>
+    <section class="hero-section" id="heroSection" aria-label="Hero Banner Slider">
+      <!-- Background Slides Container -->
+      <div class="hero-slides-wrapper">
+        
+        <!-- Slide 1: Madurai -->
+        <div class="hero-slide active" data-index="0" style="background-image: url('assets/images/Images_skytop/Madurai.jpeg');">
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-subtitle">Get Unforgettable Pleasure With Us</span>
+            <h1 class="hero-title">Discover Madurai &<br>Ancient Temple Towers</h1>
+            <p class="hero-description">Experience Tamil Nadu's rich cultural heritage, majestic Meenakshi temple architecture, and vibrant city traditions.</p>
+            <div class="hero-btns">
+              <a href="#destinations" class="btn btn-primary">Explore Madurai &rarr;</a>
+              <a href="book.html" class="btn btn-outline-glass">Book Tour Package &rarr;</a>
+            </div>
+          </div>
         </div>
+
+        <!-- Slide 2: Rameshwaram -->
+        <div class="hero-slide" data-index="1" style="background-image: url('assets/images/Images_skytop/Rameshwaram.jpeg');">
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-subtitle">Sacred Island & Oceanic Wonder</span>
+            <h2 class="hero-title">Explore Rameshwaram &<br>The Pamban Bridge</h2>
+            <p class="hero-description">Marvel at turquoise sea waters, legendary island temples, and iconic ocean railway bridges.</p>
+            <div class="hero-btns">
+              <a href="#destinations" class="btn btn-primary">Explore Rameshwaram &rarr;</a>
+              <a href="book.html" class="btn btn-outline-glass">Book Tour Package &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Kanniyakumari -->
+        <div class="hero-slide" data-index="2" style="background-image: url('assets/images/Images_skytop/kanniyakumari.jpeg');">
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-subtitle">Where Three Oceans Meet</span>
+            <h2 class="hero-title">Kanniyakumari Horizons &<br>Coastal Splendor</h2>
+            <p class="hero-description">Witness mesmerizing sunrises, Thiruvalluvar Statue, and the confluence of three oceans at India's southern tip.</p>
+            <div class="hero-btns">
+              <a href="#destinations" class="btn btn-primary">Explore Kanniyakumari &rarr;</a>
+              <a href="book.html" class="btn btn-outline-glass">Book Tour Package &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Kodaikanal -->
+        <div class="hero-slide" data-index="3" style="background-image: url('assets/images/Images_skytop/kodaikanal.jpeg');">
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-subtitle">Princess Of Hill Stations</span>
+            <h2 class="hero-title">Escape To Kodaikanal &<br>Misty Mountains</h2>
+            <p class="hero-description">Immerse yourself in pine forest canopy, calm mountain lakes, waterfalls, and crisp hill country air.</p>
+            <div class="hero-btns">
+              <a href="#destinations" class="btn btn-primary">Explore Kodaikanal &rarr;</a>
+              <a href="book.html" class="btn btn-outline-glass">Book Tour Package &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5: Ooty -->
+        <div class="hero-slide" data-index="4" style="background-image: url('assets/images/Images_skytop/ooty.jpeg');">
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-subtitle">Queen Of Hill Stations</span>
+            <h2 class="hero-title">Experience Ooty &<br>Lush Tea Gardens</h2>
+            <p class="hero-description">Ride the Nilgiri toy train through cloud-capped peaks, emerald green tea estates, and botanical gardens.</p>
+            <div class="hero-btns">
+              <a href="#destinations" class="btn btn-primary">Explore Ooty &rarr;</a>
+              <a href="book.html" class="btn btn-outline-glass">Book Tour Package &rarr;</a>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Navigation Arrows -->
+      <button class="hero-slider-arrow hero-slider-prev" id="heroPrevBtn" aria-label="Previous Slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="hero-slider-arrow hero-slider-next" id="heroNextBtn" aria-label="Next Slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Pagination Dots -->
+      <div class="hero-slider-dots" id="heroSliderDots" aria-label="Slide Navigation Dots"></div>
 
       <!-- Floating Multi-Parameter Search Bar -->
       <div class="container search-bar-wrapper">
         <form class="search-bar-card" id="heroSearchForm">
           <div class="search-field">
             <label class="search-label" for="searchDestination">Destination</label>
-            <input type="text" id="searchDestination" class="search-input" placeholder="Where to go? (e.g. Thailand)">
+            <input type="text" id="searchDestination" class="search-input" placeholder="Where to go? (e.g. Madurai)">
           </div>
 
           <div class="search-field">

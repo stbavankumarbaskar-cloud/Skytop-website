@@ -248,4 +248,148 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial Coverflow Positioning
     updateCoverflow(coverActiveIdx);
   }
+
+  // =========================================================================
+  // HERO SECTION IMAGE SLIDER & CONTENT ANIMATOR
+  // =========================================================================
+  function initHeroSlider() {
+    const heroSection = document.getElementById('heroSection');
+    if (!heroSection) return;
+
+    const slides = Array.from(heroSection.querySelectorAll('.hero-slide'));
+    const prevBtn = document.getElementById('heroPrevBtn');
+    const nextBtn = document.getElementById('heroNextBtn');
+    const dotsContainer = document.getElementById('heroSliderDots');
+
+    if (slides.length === 0) return;
+
+    let activeIndex = 0;
+    let timer = null;
+    const intervalTime = 5000;
+
+    // Render Dots Navigation
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `hero-dot-btn ${idx === activeIndex ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          goToSlide(idx);
+          resetTimer();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateDots() {
+      if (!dotsContainer) return;
+      const dots = dotsContainer.querySelectorAll('.hero-dot-btn');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIndex);
+        dot.setAttribute('aria-selected', idx === activeIndex ? 'true' : 'false');
+      });
+    }
+
+    function goToSlide(targetIdx) {
+      activeIndex = (targetIdx + slides.length) % slides.length;
+
+      slides.forEach((slide, idx) => {
+        const isActive = idx === activeIndex;
+        slide.classList.toggle('active', isActive);
+        slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+
+        // Restart content animation for active slide content
+        if (isActive) {
+          const content = slide.querySelector('.hero-content');
+          if (content) {
+            content.style.animation = 'none';
+            // Force reflow
+            void content.offsetWidth;
+            content.style.animation = 'heroContentFadeIn 0.8s ease-out forwards';
+          }
+        }
+      });
+
+      updateDots();
+    }
+
+    function nextSlide() {
+      goToSlide(activeIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(activeIndex - 1);
+    }
+
+    function startTimer() {
+      stopTimer();
+      timer = setInterval(nextSlide, intervalTime);
+    }
+
+    function stopTimer() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function resetTimer() {
+      stopTimer();
+      startTimer();
+    }
+
+    // Prev / Next Listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetTimer();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetTimer();
+      });
+    }
+
+    // Pause on Hover
+    heroSection.addEventListener('mouseenter', stopTimer);
+    heroSection.addEventListener('mouseleave', startTimer);
+
+    // Keyboard Navigation
+    heroSection.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetTimer();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetTimer();
+      }
+    });
+
+    // Touch / Swipe Navigation
+    let touchStartX = 0;
+    heroSection.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+      const diffX = touchStartX - e.changedTouches[0].clientX;
+      if (diffX > 50) {
+        nextSlide();
+        resetTimer();
+      } else if (diffX < -50) {
+        prevSlide();
+        resetTimer();
+      }
+    }, { passive: true });
+
+    // Initial setup
+    goToSlide(0);
+    startTimer();
+  }
+
+  initHeroSlider();
 });

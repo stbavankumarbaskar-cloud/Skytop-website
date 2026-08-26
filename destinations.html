@@ -57,17 +57,10 @@
     <section class="destinations-hero" aria-label="Explore South India's Heritage Banner">
       <!-- Faded Background Collage Layer -->
       <div class="hero-bg-collage">
-        <div class="collage-card card-1"><img
-            src="https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=500&q=80"
-            alt="Madurai background"></div>
-        <div class="collage-card card-2"><img
-            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500&q=80"
-            alt="Kodaikanal background"></div>
-        <div class="collage-card card-3"><img src="assets/images/rameshwaram-temple.png" alt="Rameswaram background">
-        </div>
-        <div class="collage-card card-4"><img
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80"
-            alt="Kanyakumari background"></div>
+        <div class="collage-card card-1"><img src="assets/images/Images_skytop/Madurai.jpeg" alt="Madurai background"></div>
+        <div class="collage-card card-2"><img src="assets/images/Images_skytop/kodaikanal.jpeg" alt="Kodaikanal background"></div>
+        <div class="collage-card card-3"><img src="assets/images/Images_skytop/Rameshwaram.jpeg" alt="Rameswaram background"></div>
+        <div class="collage-card card-4"><img src="assets/images/Images_skytop/kanniyakumari.jpeg" alt="Kanyakumari background"></div>
       </div>
       <div class="hero-mist-overlay"></div>
 
@@ -98,23 +91,33 @@
                 <span class="search-field-tag">TYPE</span>
               </div>
               <div class="select-wrapper">
-                <select id="searchTypeSelect" class="dest-search-select" aria-label="Select destination type">
-                  <option value="All Types">All Types</option>
-                  <option value="Heritage">Heritage</option>
-                  <option value="Temples">Temples</option>
-                  <option value="Hill Stations">Hill Stations</option>
-                  <option value="Beaches">Beaches</option>
-                  <option value="Wildlife">Wildlife</option>
-                  <option value="Cultural">Cultural</option>
+                <select id="searchTypeSelect" class="dest-search-select">
+                  <option value="All">All Types</option>
+                  <option value="Heritage">Heritage & Temples</option>
+                  <option value="HillStation">Hill Stations</option>
+                  <option value="Coastal">Coastal & Beaches</option>
                 </select>
-                <i class="fa-solid fa-chevron-down select-chevron"></i>
               </div>
             </div>
 
-            <button type="submit" class="btn-dest-search">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <span>Search</span>
-            </button>
+            <div class="dest-search-divider"></div>
+
+            <div class="dest-search-field">
+              <div class="field-icon-label">
+                <i class="fa-solid fa-calendar-days search-fa-icon"></i>
+                <span class="search-field-tag">DURATION</span>
+              </div>
+              <div class="select-wrapper">
+                <select id="searchDurationSelect" class="dest-search-select">
+                  <option value="Any">Any Duration</option>
+                  <option value="1-3">1 - 3 Days</option>
+                  <option value="4-7">4 - 7 Days</option>
+                  <option value="7+">7+ Days</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary dest-search-btn">Search &rarr;</button>
           </form>
         </div>
       </div>
@@ -143,8 +146,8 @@
           <div class="dest-row-1">
             <!-- Card 1: Madurai (Wide Left) -->
             <article class="dest-card card-wide" data-category="heritage">
-              <img src="https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=900&q=80"
-                alt="Madurai Meenakshi Temple sunset view" loading="lazy" class="dest-card-bg">
+              <img src="assets/images/Images_skytop/Madurai.jpeg"
+                alt="Madurai Meenakshi Temple view" loading="lazy" class="dest-card-bg">
               <div class="dest-card-overlay">
                 <span class="dest-badge badge-heritage">HERITAGE</span>
                 <h3 class="dest-name">Madurai</h3>
@@ -160,7 +163,7 @@
 
             <!-- Card 2: Kodaikanal (Narrow Right) -->
             <article class="dest-card card-narrow" data-category="hillstation">
-              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=80"
+              <img src="assets/images/Images_skytop/kodaikanal.jpeg"
                 alt="Kodaikanal misty lake view" loading="lazy" class="dest-card-bg">
               <div class="dest-card-overlay">
                 <span class="dest-badge badge-hill">HILL STATION</span>
@@ -175,7 +178,7 @@
           <div class="dest-row-2">
             <!-- Card 3: Rameswaram (Narrow Left) -->
             <article class="dest-card card-narrow" data-category="heritage">
-              <img src="assets/images/rameshwaram-temple.png" alt="Rameswaram Ramanathaswamy Temple corridor"
+              <img src="assets/images/Images_skytop/Rameshwaram.jpeg" alt="Rameswaram Ramanathaswamy Temple corridor"
                 loading="lazy" class="dest-card-bg">
               <div class="dest-card-overlay">
                 <span class="dest-badge badge-pilgrimage">PILGRIMAGE</span>
@@ -187,7 +190,7 @@
 
             <!-- Card 4: Kanyakumari (Wide Right) -->
             <article class="dest-card card-wide" data-category="coastal">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+              <img src="assets/images/Images_skytop/kanniyakumari.jpeg"
                 alt="Kanyakumari Thiruvalluvar Statue sunset" loading="lazy" class="dest-card-bg">
               <div class="dest-card-overlay">
                 <span class="dest-badge badge-coastal">COASTAL</span>
