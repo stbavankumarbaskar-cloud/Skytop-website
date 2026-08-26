@@ -260,8 +260,27 @@
   transform: translateY(-1px);
 }
 
+/* Floating Search Bar Responsive Media Queries */
+@media (max-width: 992px) {
+  .destinations-page .dest-search-card {
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .destinations-page .dest-search-divider {
+    display: none;
+  }
+
+  .destinations-page .btn-dest-search {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* --------------------------------------------------------------------------
-   2. TOUR CATEGORIES SHOWCASE SECTION (ASYMMETRICAL GRID MATCHING SCREENSHOT)
+   3. TOUR CATEGORIES SHOWCASE SECTION (ASYMMETRICAL GRID MATCHING SCREENSHOT)
    -------------------------------------------------------------------------- */
 .destinations-page .tour-categories-section {
   padding: 85px 0 100px;
@@ -466,27 +485,10 @@
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Tour Categories Showcase Responsive Media Queries */
 @media (max-width: 992px) {
-
   .destinations-page .dest-row-1,
   .destinations-page .dest-row-2 {
     grid-template-columns: 1fr;
-  }
-
-  .destinations-page .dest-search-card {
-    border-radius: 20px;
-    flex-direction: column;
-    padding: 16px;
-    gap: 12px;
-  }
-
-  .destinations-page .dest-search-divider {
-    display: none;
-  }
-
-  .destinations-page .btn-dest-search {
-    width: 100%;
-    justify-content: center;
   }
 }

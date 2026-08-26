@@ -68,6 +68,13 @@
   text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
 }
 
+/* Section 1 Responsive Media Queries */
+@media (max-width: 600px) {
+  .book-page .book-hero-title {
+    font-size: 34px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    2. BOOKING WIZARD CARD (CLEAN WHITE CARD BELOW BANNER)
    -------------------------------------------------------------------------- */
@@ -322,6 +329,27 @@
   color: #11a5c8;
 }
 
+/* Section 2 Responsive Media Queries */
+@media (max-width: 992px) {
+  .book-page .form-grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+
+  .book-page .vehicle-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .book-page .wizard-card {
+    padding: 24px 18px;
+  }
+
+  .book-page .vehicle-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --------------------------------------------------------------------------
    3. SPECIAL REQUEST (NEED A CUSTOM TRIP? - ORGANIC BLOB IMAGE & TEAL ACCENTS)
    -------------------------------------------------------------------------- */
@@ -437,17 +465,18 @@
 }
 
 .book-page .btn-request-quote:hover {
-  background-color: #0d9488;
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.25);
-}
-
-.book-page .btn-request-quote:hover {
   background-color: #0f766e;
   color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(15, 118, 110, 0.25);
+}
+
+/* Section 3 Responsive Media Queries */
+@media (max-width: 992px) {
+  .book-page .custom-trip-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -505,25 +534,10 @@
   background: #11a5c8;
 }
 
-/* --------------------------------------------------------------------------
-   RESPONSIVE BREAKPOINTS
-   -------------------------------------------------------------------------- */
+/* Section 4 Responsive Media Queries */
 @media (max-width: 992px) {
   .book-page .coverage-top-row {
     grid-template-columns: 1fr;
-  }
-
-  .book-page .custom-trip-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .book-page .form-grid-2x2 {
-    grid-template-columns: 1fr;
-  }
-
-  .book-page .vehicle-cards-grid {
-    grid-template-columns: 1fr 1fr;
   }
 
   .book-page .regions-grid {
@@ -532,18 +546,6 @@
 }
 
 @media (max-width: 600px) {
-  .book-page .book-hero-title {
-    font-size: 34px;
-  }
-
-  .book-page .wizard-card {
-    padding: 24px 18px;
-  }
-
-  .book-page .vehicle-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
   .book-page .regions-grid {
     grid-template-columns: 1fr;
   }
